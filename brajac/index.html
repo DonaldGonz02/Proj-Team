@@ -63,18 +63,28 @@
 
         //Función de la visualización del tablero de juego
         function gato(){
-                //Estas funciones hacen que se cargue la imagen del tablero en el canvas
-                var imagen = new Image();
-                function procesaImagen(){
-                    ctx.drawImage(imagen,0,0);
-                }
-                imagen.src = "tablero.png";
-                imagen.onload = function(e){
-                    procesaImagen();
-                }
+            //Estas funciones hacen que se cargue la imagen del tablero en el canvas
+            var imagen = new Image();
+            function procesaImagen(){
+                ctx.drawImage(imagen,0,0);
+            }
+            imagen.src = "tablero.png";
+            imagen.onload = function(e){
+                procesaImagen();
+            }
+            //Se insertan las fichas en array y se dibujan, posiciones Ficha, Renglon, Columna.
+            fichas_array.push(new Ficha(288,29,lados,lados,0,0,0));
+            fichas_array.push(new Ficha(423,29,lados,lados,1,0,1));
+            fichas_array.push(new Ficha(556,29,lados,lados,2,0,2));
+            fichas_array.push(new Ficha(288,160,lados,lados,3,1,0));
+            fichas_array.push(new Ficha(420,160,lados,lados,4,1,1));
+            fichas_array.push(new Ficha(560,160,lados,lados,5,1,2));
+            fichas_array.push(new Ficha(286,295,lados,lados,6,2,0));
+            fichas_array.push(new Ficha(424,295,lados,lados,7,2,1));
+            fichas_array.push(new Ficha(560,295,lados,lados,8,2,2));
         }
 
-        
+
 
     </script>
 </head>
