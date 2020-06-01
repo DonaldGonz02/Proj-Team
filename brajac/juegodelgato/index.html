@@ -154,6 +154,21 @@
                     setTimeout(tiraMaquina,1000);
                 }
             }
+            //Verifición si ganamos.
+                verificaRenglones(true);
+                verificaColumnas(true);
+                verificaDiagonal1(true);
+                verificaDiagonal2(true);
+            if(gameOver==false && tiradas<9){ //jugadas, si se llenan todas se llama al listener (Empate).
+                //Si no ganamos.
+                mensaje("Esperando respuesta...");
+                canvas.removeEventListener("click",seleccionUsuario,false);
+            } else {
+                //Si ganamos, desactivamos el listener de empate.
+                if(gameOver==false){
+                mensaje("Oh, quedaron empatados.");
+                }
+            }
         }
 
     </script>
