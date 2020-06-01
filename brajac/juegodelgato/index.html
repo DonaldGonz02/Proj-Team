@@ -130,7 +130,21 @@
             var pos = ajustar(e.clientX, e.clientY);
             var x = pos.x;
             var y = pos.y;
-
+            //Ciclo de verificacion si se ha dado en el lugar correcto y si el lugar está vacio.        
+            var ficha;
+            for (i=0; i<fichas_array.length; i++){
+                ficha = fichas_array[i];
+                //Aqui se verifica si el click esta dentro del espacio correcto.
+                if (ficha.x > 0){
+                if ((x > ficha.x)&&
+                    (x < ficha.x + ficha.w)&&
+                    (y > ficha.y)&&
+                    (y < ficha.y + ficha.h)){
+                    tiradas++;  //aumenta uno a las tiradas
+                        break;  //Saca del ciclo
+                    }
+                }
+            }
         }
 
     </script>
