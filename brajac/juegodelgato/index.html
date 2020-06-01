@@ -93,7 +93,19 @@
             ctx.fillText(cadena,lon,470);
         }
         
-        
+        //Función de creación de fichas como objeto, colocando sus valores correspondientes.
+        function Ficha(x,y,w,h,i,ren,col){
+                this.x = x;
+                this.y = y;
+                this.w = w;
+                this.h = h;
+                this.i = i;
+                this.ren = ren;
+                this.col = col;
+                this.peso = 0;
+                this.valor = "";
+                this.pinta = pintaFicha;
+            }
 
     </script>
 </head>
@@ -104,6 +116,6 @@
         </canvas>
         <button id="boton" type="reset" onclick="javascript:window.location.reload();">¡Vuelve a jugar!</button>
         <br><br><br><br>
-        <center><a href="file:///C:/laragon/www/Proj-Team/index.html"><img src="file:///C:/laragon/www/Proj-Team/brajac/juegodelgato/inicio.jpg"></a></center>
+        <center><a href="file:///C:/laragon/www/Proj-Team/tree/master/dongon"><img src="file:///C:/laragon/www/Proj-Team/brajac/juegodelgato/inicio.jpg"></a></center>
 </body>
 </html>
