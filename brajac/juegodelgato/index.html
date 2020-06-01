@@ -145,6 +145,15 @@
                     }
                 }
             }
+            //comprobar si el espacio es aceptable para colocar la ficha.
+            if(i<fichas_array.length){
+                //Se muestra en la pantalla la jugada del usuario (si esta vacio el lugar).
+                if (ficha.valor == ""){
+                    ficha.pinta("X");
+                    //Se lanza un timer(temporizador) para que la pc haga su jugada, en un segundo de retraso.
+                    setTimeout(tiraMaquina,1000);
+                }
+            }
         }
 
     </script>
