@@ -49,6 +49,10 @@ header .textos-header{
 }
 
 /*panel de juegos*/
+.Panel{
+    background-color: whitesmoke;
+    padding: 0 0 60px 0;
+}
 .contenedor{
     padding: 60 px 0;
     width: 90%;
@@ -58,12 +62,57 @@ header .textos-header{
     overflow: hidden;
 }
 
-.titulo{
-    color: blanchedalmond;
+.title{
+    color: rgb(4, 84, 160);
     font-size: 30px;
     text-align: center;
     margin-bottom: 60px;
 }
+.galeria{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap
+}
+.img-portafolio{
+    width: 24%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5)
+}
+.img-portafolio > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hover-bloque{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+   /*joysrinck*/
+    top: 0;
+    transform: scale(0);
+    background: hsla(250, 75%, 75%, 0.5 );
+    transition: transform .6s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hover-bloque img{
+    width: 50px;
+}
+
+.hover-bloque p{
+    color: greenyellow;
+}
+.img-portafolio:hover .hover-bloque{
+    transform: scale(1);
+} 
 
 /*footer*/
 
