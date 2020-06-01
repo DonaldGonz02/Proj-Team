@@ -1,0 +1,17 @@
+body{
+    width: 960px;
+    margin: 0 auto;
+    background: radial-gradient( rgba(102, 49, 6, 0.925), rgba(75, 7, 7, 0.5));;
+}
+h1{
+    text-align: center;
+    color: rgb(65, 19, 5);
+    
+    
+}
+#pantalla{
+    width: 960px; 
+    height: 450px;
+    border: groove 10px rgba(7, 6, 2, 0.664);
+    background: rgba(15, 16, 119, 0.377);   
+}
