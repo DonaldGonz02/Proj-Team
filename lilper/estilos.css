@@ -34,3 +34,12 @@ h1{
     border: groove 10px rgba(7, 6, 2, 0.664);
     background: rgba(15, 16, 119, 0.377);   
 }
+#boton{
+    background-color: rgb(6, 2, 58);
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bolder;
+    padding: 3px;
+    border: solid 2px black;
+}
