@@ -197,7 +197,97 @@
             return ficha;
         }
 
+        //Funciones de verificación de fichas de 3 seguidas para la victoria.
         
+        //Función de verificación de fichas en horizontal.
+        function verificaRenglones(calculaPeso) {
+            if(gameOver==false){
+                for (i=0; i<RENGLONES; i++) {
+                    fichas_X = 0;
+                    fichas_O = 0;
+                    for (j=0; j<COLUMNAS; j++) {
+                        ficha = buscaFicha(i,j);
+                        fichas_X += (ficha.valor=="X"?1:0);
+                        fichas_O += (ficha.valor=="O"?1:0);
+                    }
+                    if(calculaPeso){
+                        for (j=0; j<COLUMNAS; j++) {
+                            ficha = buscaFicha(i,j);
+                            pesoFicha(ficha.i, fichas_O, fichas_X);
+                        }
+                    }
+                    gameOver = verificaFin(fichas_O, fichas_X);
+                    if(gameOver) break;
+                }
+            }
+        }
+
+        //Función de verificación de fichas en vertical.
+        function verificaColumnas(calculaPeso) {
+            if(gameOver==false){
+                for (j=0; j<COLUMNAS; j++) {
+                    fichas_X = 0;
+                    fichas_O = 0;
+                    for (i=0; i<RENGLONES; i++) {
+                        ficha = buscaFicha(i,j);
+                        fichas_X += (ficha.valor=="X"?1:0);
+                        fichas_O += (ficha.valor=="O"?1:0);
+                    }
+                    if(calculaPeso){
+                        for (i=0; i<RENGLONES; i++) {
+                            ficha = buscaFicha(i,j);
+                            pesoFicha(ficha.i, fichas_O, fichas_X);
+                        }
+                    }
+                    gameOver = verificaFin(fichas_O, fichas_X);
+                    if(gameOver) break;
+                }
+            }
+        }
+
+        //Función de verificación de fichas en diagonal de forma descendente.
+        function verificaDiagonal1(calculaPeso) {
+            if(gameOver==false){
+                fichas_X = 0;
+                fichas_O = 0;
+                for (i=0; i<RENGLONES; i++) {
+                    ficha = buscaFicha(i,i);
+                    fichas_X += (ficha.valor=="X"?1:0);
+                    fichas_O += (ficha.valor=="O"?1:0);
+                }
+                if(calculaPeso){
+                    for(i=0; i<RENGLONES; i++) {
+                        ficha = buscaFicha(i,i);
+                        pesoFicha(ficha.i, fichas_O, fichas_X);
+                    }
+                }
+                gameOver = verificaFin(fichas_O, fichas_X);
+            }
+        }
+
+        //Función de verificación de fichas en diagonal de forma ascendente.
+        function verificaDiagonal2(calculaPeso) {
+            if(gameOver==false){
+                fichas_X = 0;
+                fichas_O = 0;
+                j = 2;
+                for (i=0; i<RENGLONES; i++) {
+                    ficha = buscaFicha(i,j);
+                    fichas_X += (ficha.valor=="X"?1:0);
+                    fichas_O += (ficha.valor=="O"?1:0);
+                    j--;
+                }
+                if(calculaPeso){
+                    j = 2
+                    for (i=0; i<RENGLONES; i++) {
+                        ficha = buscaFicha(i,j);
+                        pesoFicha(ficha.i, fichas_O, fichas_X);
+                        j--;
+                    }
+                }
+                gameOver = verificaFin(fichas_O, fichas_X);
+            }
+        }
 
     </script>
 </head>
