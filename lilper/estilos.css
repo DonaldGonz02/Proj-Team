@@ -1,5 +1,8 @@
 body{
-
-    background:radial-gradient(ellipse at bottom, #0D1E31, #111);
-
+    height: 100vh;
+    width: 960px;
+    margin: 0 auto;
+    display: flex;
+    background:radial-gradient(ellipse at bottom, rgb(201, 133, 117), rgb(206, 73, 40));
+    overflow: hidden;
 }
