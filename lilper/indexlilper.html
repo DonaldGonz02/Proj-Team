@@ -9,11 +9,19 @@
 <body>
     <h1>Juego del Ahorcado</h1>
     
-     <!-- etiqueta del canvas -->
-    <canvas id="pantalla" >
-       
+     <!-- etiqueta del canvas o lienzo -->
+    <canvas id="pantalla" > 
     </canvas>
+    <!--se creo un boton para volver a cargar el juego-->
     <button id="boton" type="reset" onclick="javascript:window.location.reload();">Volver a Jugar</button>
-    <script>
+   <!--se abrio un script para realizar las funciones de java script-->
+   <script>
+    //se declaran las variables a trabajar 
+    var ctx;
+    var canvas;
+    var palabras;
+    var  letras = "QWERTYUIOPASDFGHJKLÑZXCVBNM";
+    </script>
+
   </body>
 </html>
