@@ -1,0 +1,25 @@
+/*Estilos Generales*/
+.{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+/*panel de juegos*/
+.contenedor{
+    padding: 60 px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    /*evitar desbordes*/
+    overflow: hidden;
+}
+
+.titulo{
+    color: blanchedalmond;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
