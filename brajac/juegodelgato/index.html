@@ -150,8 +150,8 @@
                 //Se muestra en la pantalla la jugada del usuario (si esta vacio el lugar).
                 if (ficha.valor == ""){
                     ficha.pinta("X");
-                    //Se lanza un timer(temporizador) para que la pc haga su jugada, en un segundo de retraso.
-                    setTimeout(tiraMaquina,1000);
+                    //Se lanza un timer(temporizador) para que la pc haga su jugada, en dos segundos de retraso.
+                    setTimeout(tiraMaquina,2000);
                 }
             }
             //Verifición si ganamos.
@@ -176,7 +176,7 @@
             fin = false;
             if (X == 3) {
                 fin = true;
-                mensaje("¡Felicitaciones, has vencido a la máquina!"); //Victoria del usuario.
+                mensaje("¡En hora buena, ganaste!"); //Victoria del usuario.
                 canvas.removeEventListener("click",seleccionUsuario,false);
             } else if (O == 3) {
                 fin = true;
