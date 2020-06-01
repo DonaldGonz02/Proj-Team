@@ -84,7 +84,16 @@
             fichas_array.push(new Ficha(560,295,lados,lados,8,2,2));
         }
 
-
+        //Función de interacción con el usuario, mensajes de victoria o derrota, empate y turno.
+        function mensaje(cadena){
+            var lon = (canvas.width-(20*cadena.length))/2;
+            ctx.strokeStyle = "blue";
+            ctx.clearRect(0,420,canvas.width,100);
+            ctx.font = "bold 40px Courier";
+            ctx.fillText(cadena,lon,470);
+        }
+        
+        
 
     </script>
 </head>
