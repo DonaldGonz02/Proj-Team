@@ -124,6 +124,15 @@
             return {x:x, y:y}
         }
 
+        //Función de lo que pasará en la jugada del usuario (Selección del mouse).
+        function seleccionUsuario(e){
+            //Ajusta la posicion en coordenadas del click, llama la función ajustar.
+            var pos = ajustar(e.clientX, e.clientY);
+            var x = pos.x;
+            var y = pos.y;
+
+        }
+
     </script>
 </head>
 <body>
