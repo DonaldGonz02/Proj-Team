@@ -28,6 +28,14 @@
     var lon = 35;
     var margen = 20;
     var pistaText = "";
+    //arreglos 
+    var teclas_array = new Array();
+    var letras_array = new Array();
+    var palabras_array = new Array();
+
+             
+    var aciertos = 0;
+    var errores = 0;
 
     palabras_array.push("LIMON");
     palabras_array.push("LEON");
@@ -59,7 +67,23 @@
     palabras_array.push("DISTANCIAMIENTO");
     palabras_array.push("GEL");
     palabras_array.push("ALCOHOL");
+    palabras_array.push("MASCARILLA");
+    palabras_array.push("SEMILLA");
     
+    window.onload = function(){
+                canvas = document.getElementById("pantalla");
+                if (canvas && canvas.getContext){
+                    ctx = canvas.getContext("2d");
+                    if(ctx){
+                        teclado();
+                        pintaPalabra();
+                        horca(errores);
+                        canvas.addEventListener("click", selecciona, false);
+                    } else {
+                        alert ("Error al cargar el contexto!");
+                    }
+                  }
+            }
     </script>
 
   </body>
