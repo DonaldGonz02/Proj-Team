@@ -307,6 +307,46 @@
             }
         }
 
+        //Función de juego de la computadora, la hace pensar para ganar.
+        function tiraMaquina(){
+            tiradas++;
+            console.log("Tirada numero: " + tiradas);
+            //Comprobación si exite un ganador.
+            if (gameOver == false){
+                //Verifición del peso de la ficha.
+                verificaRenglones(true);
+                verificaColumnas(true);
+                verificaDiagonal1(true);
+                verificaDiagonal2(true);
+                //Selección de la mejor jugada.
+                fichas_X = 0;
+                fichas_O = 0;
+                mejorJugada = 0;
+                for (i=0; i<fichas_array.length; i++){
+                    ficha = fichas_array[i];
+                    if (ficha.peso>mejorJugada){
+                        mejorJugada = ficha.peso;
+                        ii = i;
+                    }
+                }
+                //Realización de la jugada de la máquina.
+                ficha = fichas_array[ii];
+                ficha.pinta("O");
+                verificaRenglones(false);
+                verificaColumnas(false);
+                verificaDiagonal1(false);
+                verificaDiagonal2(false);
+                //Verificación del ganador.
+                if(gameOver==false){
+                    //Si nadie gano activa el listener de click.
+                    if(tiradas<9){
+                        canvas.addEventListener("click",seleccionUsuario,false);
+                        mensaje("Piensa tu jugada...");
+                    }
+                }
+            }
+        }
+
     </script>
 </head>
 <body>
