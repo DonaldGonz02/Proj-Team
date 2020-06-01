@@ -198,7 +198,7 @@
         }
 
         //Funciones de verificación de fichas de 3 seguidas para la victoria.
-        
+
         //Función de verificación de fichas en horizontal.
         function verificaRenglones(calculaPeso) {
             if(gameOver==false){
@@ -286,6 +286,24 @@
                     }
                 }
                 gameOver = verificaFin(fichas_O, fichas_X);
+            }
+        }
+
+        //Función del peso de ficha, posición viable para tirar la jugada (Solo la computadora)
+        function pesoFicha(i,fichas_O, fichas_X) {
+            ficha = fichas_array[i];
+            if (ficha.valor == ""){
+                if (fichas_O == 2 && fichas_X == 0) {
+                    ficha.peso += 10;
+                } else if (fichas_O == 0 && fichas_X == 2) {
+                    ficha.peso += 6;
+                } else if (fichas_O == 1 && fichas_X == 0) {
+                    ficha.peso += 3;
+                } else {
+                    ficha.peso += 1;
+                }
+            } else {
+                ficha.peso = 0;
             }
         }
 
