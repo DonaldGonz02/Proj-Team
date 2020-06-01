@@ -95,17 +95,26 @@
         
         //Función de creación de fichas como objeto, colocando sus valores correspondientes.
         function Ficha(x,y,w,h,i,ren,col){
-                this.x = x;
-                this.y = y;
-                this.w = w;
-                this.h = h;
-                this.i = i;
-                this.ren = ren;
-                this.col = col;
-                this.peso = 0;
-                this.valor = "";
-                this.pinta = pintaFicha;
-            }
+            this.x = x;
+            this.y = y;
+            this.w = w;
+            this.h = h;
+            this.i = i;
+            this.ren = ren;
+            this.col = col;
+            this.peso = 0;
+            this.valor = "";
+            this.pinta = pintaFicha;
+        }
+
+        //Función de mostrar el valor de la ficha en la pantalla, ya sea x - o.
+        function pintaFicha(valor){
+            this.valor = valor;
+            ctx.font = "bold 100px Arial";
+            ctx.fillStyle = "blue";
+            ctx.fillText(valor, this.x+30, this.y+100, this.w, this.h);
+                
+        }
 
     </script>
 </head>
