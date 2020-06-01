@@ -116,6 +116,14 @@
                 
         }
 
+        //Función de ajustar el valor cuando el usuario de click en alguna posición.
+        function ajustar(xx, yy){
+            var posCanvas = canvas.getBoundingClientRect();
+            var x = xx - posCanvas.left;
+            var y = yy - posCanvas.top;
+            return {x:x, y:y}
+        }
+
     </script>
 </head>
 <body>
