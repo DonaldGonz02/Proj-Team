@@ -186,6 +186,19 @@
             return fin;
         }
 
+        //Función bucar la ficha con la que se está jugando, te regresa tu ficha en tu turno.
+        function buscaFicha(i,j){
+            for(k=0; k<fichas_array.length; k++){
+                ficha = fichas_array[k];
+                if(ficha.ren == i && ficha.col==j){
+                    break;
+                }
+            }
+            return ficha;
+        }
+
+        
+
     </script>
 </head>
 <body>
