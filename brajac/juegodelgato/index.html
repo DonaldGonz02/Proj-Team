@@ -171,6 +171,21 @@
             }
         }
 
+        //Verifica al ganador, el usuario o la computadora.
+        function verificaFin(O, X){
+            fin = false;
+            if (X == 3) {
+                fin = true;
+                mensaje("¡Felicitaciones, has vencido a la máquina!"); //Victoria del usuario.
+                canvas.removeEventListener("click",seleccionUsuario,false);
+            } else if (O == 3) {
+                fin = true;
+                mensaje("Lo lamento, te han ganado."); //Victoria de la computadora.
+                canvas.removeEventListener("click",seleccionUsuario,false);
+            }
+            return fin;
+        }
+
     </script>
 </head>
 <body>
