@@ -29,8 +29,6 @@ h1{
     
 }
 #pantalla{
-    width: 960px; 
-    height: 450px;
     border: groove 10px rgba(7, 6, 2, 0.945);
     background: rgba(15, 16, 119, 0.377);   
 }
@@ -48,3 +46,21 @@ h1{
     font-size: 22px;
     border: groove 4px rgb(35, 8, 187);
 }
+
+#prin{
+    background: linear-gradient(rgba(231, 87, 82, 0.925), rgba(216, 196, 16, 0.5));
+    border-radius: 2px;
+    box-shadow: 0 0 0 5px rgba(0, 14, 10, 0.226);
+    display: table;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 1% auto;
+    font-family: Verdana, sans-serif;
+       
+}
+#prin:hover{
+    background-color: rgba(131, 185, 216, 0.664);
+    font-size: 22px;
+    border: groove 4px rgb(35, 8, 187);
+}
+    

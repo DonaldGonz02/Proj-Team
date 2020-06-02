@@ -9,11 +9,11 @@
 <body>
     <h1>Juego del Ahorcado</h1>
     <canvas id="pantalla" width="960px" height="450px"> <!-- etiqueta del canvas con sus medidas en la pantalla -->
-      Tu navegador no soporta Canvas.
+
   </canvas>
   <!-- El boton que nos sirve para recargar la pagina y asi generar una nueva palabra y volver a jugar -->
   <button id="boton" type="reset" onclick="javascript:window.location.reload();">Volver a Jugar</button>
-  <button id= "home" type="button" href="/dongon/indexHP.html"> HOME</button>
+  <button id= "prin" type="button" href="/dongon/indexHP.html"> HOME</button>
   <script>
       
       //variables a utilizar
@@ -54,7 +54,7 @@
       palabras_array.push("MUNDO");
       palabras_array.push("AMIGO");
       palabras_array.push("ELLANOTEAMA");
-      palabras_array.push("APOLO");
+      palabras_array.push("POLO");
       palabras_array.push("PANDEMIA");
       palabras_array.push("CUARENTENA");
       palabras_array.push("CLASES");
@@ -64,9 +64,8 @@
       palabras_array.push("HACKERS");
       palabras_array.push("AVISPON");
       palabras_array.push("ASESINO");
-      palabras_array.push("EXTRATERRESTRES");
       palabras_array.push("NAVES");
-      palabras_array.push("DISTANCIAMIENTO");
+      palabras_array.push("DISTANCIA");
       palabras_array.push("GEL");
       palabras_array.push("ALCOHOL");
       palabras_array.push("MASCARILLA");
@@ -96,12 +95,12 @@
 
       // Dibujar Teclas
       function dibujaTecla(){
-          ctx.fillStyle = colorTecla;
-          ctx.strokeStyle = colorMargen;
+          ctx.fillStyle = colorTecla="orange";
+          ctx.strokeStyle = colorMargen = "black";
           ctx.fillRect(this.x, this.y, this.ancho, this.alto);
           ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
           
-          ctx.fillStyle = "white";
+          ctx.fillStyle = "black";
           ctx.font = "bold 20px courier";
           ctx.fillText(this.letra, this.x+this.ancho/2-5, this.y+this.alto/2+5);
       }
@@ -117,7 +116,7 @@
       //dibuja una cajita para la letra
       function dibujaCajaLetra(){
           ctx.fillStyle = "white";
-          ctx.strokeStyle = "black";
+          ctx.strokeStyle = "gold";
           ctx.fillRect(this.x, this.y, this.ancho, this.alto);
           ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
       }
@@ -139,7 +138,7 @@
                   pista = "inventos desarrollo y algoritmos";
                   break;
               case 'ESPACIO':
-                  pista = "a donde esta el apolo 11 ";
+                  pista = "a donde viajan los astronautas";
                   break;
               case 'MESA':  
                   pista = "Tiene cuatro patas";
@@ -169,26 +168,57 @@
                   pista = "Cuarenta días";
                   break;  
              case 'PANDEMIA':  
-                  pista = "El nombre que le vas a poner a tu hija despues que pase el coronavirus";
+                  pista = "El nombre que le vas a poner a tu hija después que pase el coronavirus";
                   break;  
              case 'CLASES':  
-                  pista = "lo que no te gustan";
+                  pista = "las que no te gustan";
                   break;  
              case 'VIRTUALES':  
-                  pista = "Tus clases";
+                  pista = "Tus clases del 2020";
                   break;  
              case 'ANONYMOUS':  
                   pista = "Hackers";
                   break;
-             case 'DISTANCIAMIENTO':  
-                  pista = "Susanadistancia";
+             case 'DISTANCIA':  
+                  pista = "Susana";
+                  break;
+            case 'HACKERS':  
+                  pista = "Revelaran tus más oscuros secretos";
                   break;
              case 'MASCARILLA':  
                   pista = "Protección";
                   break;
              case 'PAPEL':  
-                  pista = "Lo más importante en tiempos de crisis";
+                  pista = "vienen en six y no son cervezas";
                   break;
+             case "ROJO":  
+                  pista = "color";
+                  break;   
+             case 'POLO':  
+                  pista = "Es más frio que su corazón";
+                  break; 
+             case 'GRASA':  
+                  pista = "Esta en tus lonjitas";
+                  break;
+             case 'AVISPON':  
+                  pista = "Plaga del 2020";
+                  break;
+             case 'CRISIS':  
+                  pista = "Las que te dan en la madrugada";
+                  break;
+             case 'NAVES':  
+                  pista = "las que usan los extraterrestres";
+                  break;
+             case 'ASESINO':  
+                  pista ="corta carne y no es carnicero";
+                  break;
+             case 'SEMILLA':  
+                  pista = "Siembra y cosecha";
+                  break;
+             case 'ALCOHOL':  
+                  pista = "el que te deja tirado en las banquetas";
+                  break;  
+
               default: 
                   pista="No hay pista XD";
           }
@@ -315,9 +345,9 @@
 
           ctx.font = "bold 50px Courier";
           if (errores < 5){
-              ctx.fillText("Muy bien, la palabra es: ", 110, 280);
+              ctx.fillText("Sí crack, la palabra es: ", 110, 280);
           } else {
-              ctx.fillText("Lo sentimos, la palabra era: ", 110, 280);
+              ctx.fillText("SUPER F, la palabra era: ", 110, 280);
           }
           
           ctx.font = "bold 80px Courier";
