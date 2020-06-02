@@ -4,6 +4,7 @@ body{
     background: radial-gradient( rgba(8, 6, 44, 0.925), rgba(41, 17, 173, 0.445));;
    
 }
+
 h1{
     text-align: center;
     color: rgb(65, 19, 5);
@@ -66,3 +67,78 @@ h1{
     border: groove 4px rgba(182, 7, 7, 0.897);
 }
     
+
+footer{
+    background: #0f0c29;  
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    padding: 10px 0 10px 0;
+    margin:10px;
+    
+   
+}
+
+.contenedor-foot{
+    display: flex;
+    width: 1200px;
+    height:60px;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #0f0c29;
+}
+.footi{
+    text-align: center;
+}
+.footi h4{
+    color: rgb(234, 235, 236);
+    border-bottom: 1px solid ;
+    padding-bottom:2px;
+    margin-bottom: 5px;
+}
+
+.footi p{
+    color:wheat ;
+}
+.Autor{
+    text-align: center;
+    font-size: 25px;
+    margin: 10px 0 0 0 ;
+    color: rgb(49, 98, 153);
+}
+footer{
+    background: #0f0c29;  
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    padding: 10px 0 10px 0;
+    margin:1px;
+    overflow: hidden;
+}
+
+.contenedor-foot{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #0f0c29;
+}
+.footi{
+    text-align: center;
+}
+.footi h4{
+    color: rgb(234, 235, 236);
+    border-bottom: 1px solid ;
+    padding-bottom:2px;
+    margin-bottom: 5px;
+}
+
+.footi p{
+    color:wheat ;
+}
+.Autor{
+    text-align: center;
+    font-size: 25px;
+    margin: 10px 0 0 0 ;
+    color: rgb(49, 98, 153);
+}
