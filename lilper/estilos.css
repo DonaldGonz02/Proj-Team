@@ -1,6 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
 body{
-    width: 960px;
-    margin: 0 auto;
+    
     background: radial-gradient( rgba(8, 6, 44, 0.925), rgba(41, 17, 173, 0.445));;
    
 }
@@ -32,7 +37,12 @@ h1{
 }
 #pantalla{
     border: groove 10px rgba(5, 7, 77, 0.945);
-    background: rgba(15, 16, 119, 0.377);   
+    background: rgba(15, 16, 119, 0.377);  
+    border-radius: 2px;
+    display: table;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 1% auto;
 }
 #boton{
     background-color: rgb(4, 3, 17);
@@ -42,6 +52,11 @@ h1{
     font-weight: bolder;
     padding: 3px;
     border: solid 2px black;
+    border-radius: 2px;
+    display: table;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 1% auto;
 }
 #boton:hover{ 
     background-color: rgba(131, 185, 216, 0.664);
