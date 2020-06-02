@@ -8,210 +8,292 @@
 </head>
 <body>
     <h1>Juego del Ahorcado</h1>
-    
-     <!-- etiqueta del canvas o lienzo -->
-    <canvas id="pantalla" > 
-    </canvas>
-    <!--se creo un boton para volver a cargar el juego-->
-    <button id="boton" type="reset" onclick="javascript:window.location.reload();">Volver a Jugar</button>
-   <!--se abrio un script para realizar las funciones de java script-->
-  
+    <canvas id="pantalla" width="960px" height="450px"> <!-- etiqueta del canvas con sus medidas en la pantalla -->
+      Tu navegador no soporta Canvas.
+  </canvas>
+  <!-- El boton que nos sirve para recargar la pagina y asi generar una nueva palabra y volver a jugar -->
+  <button id="boton" type="reset" onclick="javascript:window.location.reload();">Volver a Jugar</button>
   <script>
-    //se declaran las variables a trabajar 
-    var ctx;
-    var canvas;
-    var palabras;
-    var  letras = "QWERTYUIOPASDFGHJKLÑZXCVBNM";
-    var colorTecla = "#585858";
-    var colorMargen = "red";
-    var inicioX = 200;
-    var inicioY = 300;
-    var lon = 35;
-    var margen = 20;
-    var pistaText = "";
-    //arreglos 
-    var teclas_array = new Array();
-    var letras_array = new Array();
-    var palabras_array = new Array();
-
-             
-    var aciertos = 0;
-    var errores = 0;
-
-    palabras_array.push("LIMON");
-    palabras_array.push("LEON");
-    palabras_array.push("INGENIERIA");
-    palabras_array.push("ESPACIO");
-    palabras_array.push("MESA");
-    palabras_array.push("ROJO");
-    palabras_array.push("MOCHILA");
-    palabras_array.push("CORONAVIRUS");
-    palabras_array.push("TERREMOTO");
-    palabras_array.push("SOL");
-    palabras_array.push("GRASA");
-    palabras_array.push("GASOLINA");
-    palabras_array.push("MUNDO");
-    palabras_array.push("AMIGO");
-    palabras_array.push("ELLANOTEAMA");
-    palabras_array.push("APOLO");
-    palabras_array.push("PANDEMIA");
-    palabras_array.push("CUARENTENA");
-    palabras_array.push("CLASES");
-    palabras_array.push("VIRTUALES");
-    palabras_array.push("CRISIS");
-    palabras_array.push("ANONYMOUS");
-    palabras_array.push("HACKERS");
-    palabras_array.push("AVISPON");
-    palabras_array.push("ASESINO");
-    palabras_array.push("EXTRATERRESTRES");
-    palabras_array.push("NAVES");
-    palabras_array.push("DISTANCIAMIENTO");
-    palabras_array.push("GEL");
-    palabras_array.push("ALCOHOL");
-    palabras_array.push("MASCARILLA");
-    palabras_array.push("SEMILLA");
-
-    // objetos a utilizar
-    //objeto de teclas 
-    function Tecla(x, y, ancho, alto, letra){
-      this.x = x;
-      this.y = y;
-      this.ancho = ancho;
-      this.alto = alto;
-      this.letra = letra;
-      this.dibuja = dibujaTecla;
-     }
-     //objeto de letra
-    function Letra(x, y, ancho, alto, letra){
-      this.x = x;
-      this.y = y;
-      this.ancho = ancho;
-      this.alto = alto;
-      this.letra = letra;
-      this.dibuja = dibujaCajaLetra;
-      this.dibujaLetra = dibujaLetraLetra;
-     }
-     //funciones 
-     //dibujar teclas
-    function dibujaTecla(){
-     ctx.fillStyle = colorTecla;
-     ctx.strokeStyle = colorMargen;
-     ctx.fillRect(this.x, this.y, this.ancho, this.alto);
-     ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
-                
-     ctx.fillStyle = "white";
-     ctx.font = "bold 20px courier";
-     ctx.fillText(this.letra, this.x+this.ancho/2-5, this.y+this.alto/2+5);
-     }
-     //dibuja la letra 
-    function dibujaLetraLetra(){
-     var w = this.ancho;
-     var h = this.alto;
-     ctx.fillStyle = "black";
-     ctx.font = "bold 40px Courier";
-     ctx.fillText(this.letra, this.x+w/2-12, this.y+h/2+14);
-     }
-       //se dibuja la cajita para la letra
-    function dibujaCajaLetra(){
-     ctx.fillStyle = "white";
-     ctx.strokeStyle = "black";
-     ctx.fillRect(this.x, this.y, this.ancho, this.alto);
-     ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
-      }  
-       //funcion para distribuir el teclado
-    function teclado(){
-     var ren = 0;
-     var col = 0;
-     var letra = "";
-     var miLetra;
-     var x = inicioX;
-     var y = inicioY;
-     for(var i = 0; i < letras.length; i++){
-      letra = letras.substr(i,1);
-      miLetra = new Tecla(x, y, lon, lon, letra);
-      miLetra.dibuja();
-      teclas_array.push(miLetra);
-      x += lon + margen;
-      col++;
-       if(col==10){
-        col = 0;
-        ren++;
-        if(ren==2){
-         x = 280;
-         } else {
-          x = inicioX;
-            }
-         }
-        y = inicioY + ren * 50;
-         }
-       }
       
-    function pintaPalabra(){
-                var p = Math.floor(Math.random()*palabras_array.length);
-                palabra = palabras_array[p];
-      
-                pistaFunction(palabra);
-            
-                var w = canvas.width;
-                var len = palabra.length;
-                var ren = 0;
-                var col = 0;
-                var y = 230;
-                var lon = 50;
-                var x = (w - (lon+margen) *len)/2;
-                for(var i=0; i<palabra.length; i++){
-                    letra = palabra.substr(i,1);
-                    miLetra = new Letra(x, y, lon, lon, letra);
-                    miLetra.dibuja();
-                    letras_array.push(miLetra);
-                    x += lon + margen;
-                }
-            }
-// se ha agregado la funcion para la orca
-    function horca(errores){
-                var imagen = new Image();
-                imagen.src = "imagenes/ahorcado"+errores+".png";
-                imagen.onload = function(){
-                    ctx.drawImage(imagen, 390, 0, 230, 230);
-                }
-    function ajusta(xx, yy){
-                var posCanvas = canvas.getBoundingClientRect();
-                var x = xx-posCanvas.left;
-                var y = yy-posCanvas.top;
-                return{x:x, y:y}
-        }
-        function gameOver(errores){
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.fillStyle = "black";
+      //variables a utilizar
+      var ctx;
+      var canvas;
+      var palabra;
+      var letras = "QWERTYUIOPASDFGHJKLÑZXCVBNM";
+      var colorTecla = "#585858";
+      var colorMargen = "red";
+      var inicioX = 200;
+      var inicioY = 300;
+      var lon = 35;
+      var margen = 20;
+      var pistaText = "";
 
-                ctx.font = "bold 50px Courier";
-                if (errores < 5){
-                    ctx.fillText("Muy bien, la palabra es: ", 110, 280);
-                } else {
-                    ctx.fillText("Lo sentimos, la palabra era: ", 110, 280);
-                }
-                
-                ctx.font = "bold 80px Courier";
-                lon = (canvas.width - (palabra.length*48))/2;
-                ctx.fillText(palabra, lon, 380);
-                horca(errores);
-            }
-    //para cargar el contexto al canvas y dar una alerta de error 
-    window.onload= function(){
-                canvas = document.getElementById("pantalla");
-                if (canvas && canvas.getContext){
-                    ctx = canvas.getContext("2d");
-                    if(ctx){
-                        teclado();
-                        pintaPalabra();
-                        horca(errores);
-                        canvas.addEventListener("click", selecciona, false);
-                    } else {
-                        alert ("Error al cargar el contexto!");
-                    }
+      /* Arreglos */
+      var teclas_array = new Array();
+      var letras_array = new Array();
+      var palabras_array = new Array();
+
+      //variables de arreglos 
+      var aciertos = 0;
+      var errores = 0;
+      
+      //palabras a utilizar
+      palabras_array.push("LIMON");
+      palabras_array.push("LEON");
+      palabras_array.push("INGENIERIA");
+      palabras_array.push("ESPACIO");
+      palabras_array.push("MESA");
+      palabras_array.push("ROJO");
+      palabras_array.push("MOCHILA");
+      palabras_array.push("CORONAVIRUS");
+      palabras_array.push("TERREMOTO");
+      palabras_array.push("SOL");
+      palabras_array.push("GRASA");
+      palabras_array.push("GASOLINA");
+      palabras_array.push("MUNDO");
+      palabras_array.push("AMIGO");
+      palabras_array.push("ELLANOTEAMA");
+      palabras_array.push("APOLO");
+      palabras_array.push("PANDEMIA");
+      palabras_array.push("CUARENTENA");
+      palabras_array.push("CLASES");
+      palabras_array.push("VIRTUALES");
+      palabras_array.push("CRISIS");
+      palabras_array.push("ANONYMOUS");
+      palabras_array.push("HACKERS");
+      palabras_array.push("AVISPON");
+      palabras_array.push("ASESINO");
+      palabras_array.push("EXTRATERRESTRES");
+      palabras_array.push("NAVES");
+      palabras_array.push("DISTANCIAMIENTO");
+      palabras_array.push("GEL");
+      palabras_array.push("ALCOHOL");
+      palabras_array.push("MASCARILLA");
+      palabras_array.push("SEMILLA");
+              
+      //objetos a utilizar
+      function Tecla(x, y, ancho, alto, letra){
+          this.x = x;
+          this.y = y;
+          this.ancho = ancho;
+          this.alto = alto;
+          this.letra = letra;
+          this.dibuja = dibujaTecla;
+      }
+      
+      function Letra(x, y, ancho, alto, letra){
+          this.x = x;
+          this.y = y;
+          this.ancho = ancho;
+          this.alto = alto;
+          this.letra = letra;
+          this.dibuja = dibujaCajaLetra;
+          this.dibujaLetra = dibujaLetraLetra;
+      }
+     
+      //funciones
+
+      // Dibujar Teclas
+      function dibujaTecla(){
+          ctx.fillStyle = colorTecla;
+          ctx.strokeStyle = colorMargen;
+          ctx.fillRect(this.x, this.y, this.ancho, this.alto);
+          ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
+          
+          ctx.fillStyle = "white";
+          ctx.font = "bold 20px courier";
+          ctx.fillText(this.letra, this.x+this.ancho/2-5, this.y+this.alto/2+5);
+      }
+      
+      //dibujar letra
+      function dibujaLetraLetra(){
+          var w = this.ancho;
+          var h = this.alto;
+          ctx.fillStyle = "black";
+          ctx.font = "bold 40px Courier";
+          ctx.fillText(this.letra, this.x+w/2-12, this.y+h/2+14);
+      }
+      //dibuja una cajita para la letra
+      function dibujaCajaLetra(){
+          ctx.fillStyle = "white";
+          ctx.strokeStyle = "black";
+          ctx.fillRect(this.x, this.y, this.ancho, this.alto);
+          ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
+      }
+      
+      
+      //funcion para las pistas 
+      function pistaFunction(palabra){
+          let pista = ""; 
+          // Se crea la variable local pista que contendra nuestra frase de pista
+          switch(palabra){  
+            //  switch para poder controlar las pistas segun la palabra 
+              case 'LIMON':  
+               
+                  pista = "Es acido";
+                  break;      
+              case 'LEON':
+                  pista = "Es grande y ruge";
+                  break;
+              case 'PERRO':
+                  pista = "El mejor amigo del hombre";
+                  break;
+              case 'GATO':
+                  pista = "Son tiernos pero arañan";
+                  break;
+              default: 
+                  pista="No hay pista aun xP";
+          }
+          // Pintamos la palabra en el canvas
+          ctx.fillStyle = "black";  // Aqui ponemos el color de la letra
+          ctx.font = "bold 20px Courier";  // aqui ponemos el tipo y tamaño de la letra
+          ctx.fillText(pista, 10, 15);  // aqui ponemos la frase en nuestro caso la variable pista , seguido de la posx y posy
+      }
+
+              
+       //Distribucion del teclado
+      function teclado(){
+          var ren = 0;
+          var col = 0;
+          var letra = "";
+          var miLetra;
+          var x = inicioX;
+          var y = inicioY;
+          for(var i = 0; i < letras.length; i++){
+              letra = letras.substr(i,1);
+              miLetra = new Tecla(x, y, lon, lon, letra);
+              miLetra.dibuja();
+              teclas_array.push(miLetra);
+              x += lon + margen;
+              col++;
+              if(col==10){
+                  col = 0;
+                  ren++;
+                  if(ren==2){
+                      x = 280;
+                  } else {
+                      x = inicioX;
                   }
-    
-    </script>
+              }
+              y = inicioY + ren * 50;
+          }
+      }
+      
+      
+      //muestras aleatorias
+      function pintaPalabra(){
+          var p = Math.floor(Math.random()*palabras_array.length);
+          palabra = palabras_array[p];
 
+          pistaFunction(palabra);
+      
+          var w = canvas.width;
+          var len = palabra.length;
+          var ren = 0;
+          var col = 0;
+          var y = 230;
+          var lon = 50;
+          var x = (w - (lon+margen) *len)/2;
+          for(var i=0; i<palabra.length; i++){
+              letra = palabra.substr(i,1);
+              miLetra = new Letra(x, y, lon, lon, letra);
+              miLetra.dibuja();
+              letras_array.push(miLetra);
+              x += lon + margen;
+          }
+      }
+      
+    //coloca las imagenes de la orca 
+      function horca(errores){
+          var imagen = new Image();
+          imagen.src = "imagenes/ahorcado"+errores+".png";
+          imagen.onload = function(){
+              ctx.drawImage(imagen, 390, 0, 230, 230);
+          }
+        
+      }
+      
+      //ajusta las coordenadas
+      function ajusta(xx, yy){
+          var posCanvas = canvas.getBoundingClientRect();
+          var x = xx-posCanvas.left;
+          var y = yy-posCanvas.top;
+          return{x:x, y:y}
+      }
+      
+      //detecta la tecla y compara con la palabra elegida al azar
+      function selecciona(e){
+          var pos = ajusta(e.clientX, e.clientY);
+          var x = pos.x;
+          var y = pos.y;
+          var tecla;
+          var bandera = false;
+          for (var i = 0; i < teclas_array.length; i++){
+              tecla = teclas_array[i];
+              if (tecla.x > 0){
+                  if ((x > tecla.x) && (x < tecla.x + tecla.ancho) && (y > tecla.y) && (y < tecla.y + tecla.alto)){
+                      break;
+                  }
+              }
+          }
+          if (i < teclas_array.length){
+              for (var i = 0 ; i < palabra.length ; i++){ 
+                  letra = palabra.substr(i, 1);
+                  if (letra == tecla.letra){ 
+                      caja = letras_array[i];
+                      caja.dibujaLetra();
+                      aciertos++;
+                      bandera = true;
+                  }
+              }
+              // Si falla aumenta los errores y checa si perdio para mandar a la funcion gameover
+              if (bandera == false){  
+                  errores++;
+                  horca(errores);
+                  if (errores == 5) gameOver(errores);
+              }
+              //desaparece la tecla que se ha presionado
+              ctx.clearRect(tecla.x - 1, tecla.y - 1, tecla.ancho + 2, tecla.alto + 2);
+              tecla.x - 1;
+              //checa si gano o perdio
+              if (aciertos == palabra.length) gameOver(errores);
+          }
+      }
+      
+    //envia un mensaje si gana o pierde
+      function gameOver(errores){
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = "black";
+
+          ctx.font = "bold 50px Courier";
+          if (errores < 5){
+              ctx.fillText("Muy bien, la palabra es: ", 110, 280);
+          } else {
+              ctx.fillText("Lo sentimos, la palabra era: ", 110, 280);
+          }
+          
+          ctx.font = "bold 80px Courier";
+          lon = (canvas.width - (palabra.length*48))/2;
+          ctx.fillText(palabra, lon, 380);
+          horca(errores);
+      }
+      
+      //para cargar el contexto al lienzo y dar una alerta de error
+      window.onload = function(){
+          canvas = document.getElementById("pantalla");
+          if (canvas && canvas.getContext){
+              ctx = canvas.getContext("2d");
+              if(ctx){
+                  teclado();
+                  pintaPalabra();
+                  horca(errores);
+                  canvas.addEventListener("click", selecciona, false);
+              } else {
+                  alert ("Error al cargar el contexto!");
+              }
+          }
+      }
+  </script>
   </body>
 </html>
+ 
