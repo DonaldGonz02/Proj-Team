@@ -1,7 +1,7 @@
 body{
     width: 960px;
     margin: 0 auto;
-    background: radial-gradient( rgba(102, 49, 6, 0.925), rgba(75, 7, 7, 0.5));;
+    background: radial-gradient( rgba(241, 192, 152, 0.925), rgba(235, 223, 58, 0.5));;
 }
 h1{
     text-align: center;
@@ -31,15 +31,20 @@ h1{
 #pantalla{
     width: 960px; 
     height: 450px;
-    border: groove 10px rgba(7, 6, 2, 0.664);
+    border: groove 10px rgba(7, 6, 2, 0.945);
     background: rgba(15, 16, 119, 0.377);   
 }
 #boton{
-    background-color: rgb(6, 2, 58);
+    background-color: rgb(4, 3, 17);
     color: white;
     font-size: 20px;
     text-align: center;
     font-weight: bolder;
     padding: 3px;
     border: solid 2px black;
+}
+#boton:hover{ 
+    background-color: rgba(131, 185, 216, 0.664);
+    font-size: 22px;
+    border: groove 4px rgb(35, 8, 187);
 }

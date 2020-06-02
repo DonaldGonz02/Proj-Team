@@ -21,6 +21,117 @@
     var canvas;
     var palabras;
     var  letras = "QWERTYUIOPASDFGHJKLÑZXCVBNM";
+    var colorTecla = "#585858";
+    var colorMargen = "red";
+    var inicioX = 200;
+    var inicioY = 300;
+    var lon = 35;
+    var margen = 20;
+    var pistaText = "";
+    //arreglos 
+    var teclas_array = new Array();
+    var letras_array = new Array();
+    var palabras_array = new Array();
+
+             
+    var aciertos = 0;
+    var errores = 0;
+
+    palabras_array.push("LIMON");
+    palabras_array.push("LEON");
+    palabras_array.push("INGENIERIA");
+    palabras_array.push("ESPACIO");
+    palabras_array.push("MESA");
+    palabras_array.push("ROJO");
+    palabras_array.push("MOCHILA");
+    palabras_array.push("CORONAVIRUS");
+    palabras_array.push("TERREMOTO");
+    palabras_array.push("SOL");
+    palabras_array.push("GRASA");
+    palabras_array.push("GASOLINA");
+    palabras_array.push("MUNDO");
+    palabras_array.push("AMIGO");
+    palabras_array.push("ELLANOTEAMA");
+    palabras_array.push("APOLO");
+    palabras_array.push("PANDEMIA");
+    palabras_array.push("CUARENTENA");
+    palabras_array.push("CLASES");
+    palabras_array.push("VIRTUALES");
+    palabras_array.push("CRISIS");
+    palabras_array.push("ANONYMOUS");
+    palabras_array.push("HACKERS");
+    palabras_array.push("AVISPON");
+    palabras_array.push("ASESINO");
+    palabras_array.push("EXTRATERRESTRES");
+    palabras_array.push("NAVES");
+    palabras_array.push("DISTANCIAMIENTO");
+    palabras_array.push("GEL");
+    palabras_array.push("ALCOHOL");
+    palabras_array.push("MASCARILLA");
+    palabras_array.push("SEMILLA");
+
+    // objetos a utilizar
+    //objeto de teclas 
+    function Tecla(x, y, ancho, alto, letra){
+      this.x = x;
+      this.y = y;
+      this.ancho = ancho;
+      this.alto = alto;
+      this.letra = letra;
+      this.dibuja = dibujaTecla;
+     }
+     //objeto de letra
+    function Letra(x, y, ancho, alto, letra){
+      this.x = x;
+      this.y = y;
+      this.ancho = ancho;
+      this.alto = alto;
+      this.letra = letra;
+      this.dibuja = dibujaCajaLetra;
+      this.dibujaLetra = dibujaLetraLetra;
+     }
+     //funciones 
+     //dibujar teclas
+     function dibujaTecla(){
+        ctx.fillStyle = colorTecla;
+        ctx.strokeStyle = colorMargen;
+        ctx.fillRect(this.x, this.y, this.ancho, this.alto);
+        ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
+                
+        ctx.fillStyle = "white";
+        ctx.font = "bold 20px courier";
+        ctx.fillText(this.letra, this.x+this.ancho/2-5, this.y+this.alto/2+5);
+       }
+     //dibuja la letra 
+     function dibujaLetraLetra(){
+        var w = this.ancho;
+        var h = this.alto;
+        ctx.fillStyle = "black";
+        ctx.font = "bold 40px Courier";
+        ctx.fillText(this.letra, this.x+w/2-12, this.y+h/2+14);
+       }
+       //se dibuja la cajita para la letra
+     function dibujaCajaLetra(){
+        ctx.fillStyle = "white";
+        ctx.strokeStyle = "black";
+        ctx.fillRect(this.x, this.y, this.ancho, this.alto);
+        ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
+       }  
+    //para cargar el contexto al canvas y dar una alerta de error 
+    window.onload = function(){
+                canvas = document.getElementById("pantalla");
+                if (canvas && canvas.getContext){
+                    ctx = canvas.getContext("2d");
+                    if(ctx){
+                        teclado();
+                        pintaPalabra();
+                        horca(errores);
+                        canvas.addEventListener("click", selecciona, false);
+                    } else {
+                        alert ("Error al cargar el contexto!");
+                    }
+                  }
+            }
     </script>
 
   </body>
