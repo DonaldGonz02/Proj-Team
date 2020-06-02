@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parte del proyecto, Bradley</title>
+    <title>Juego del gato, por Bradley</title>
     <style>
         body{
-            width: 960px;
+            width: 1100px;
             margin: 0 auto;
         }
         h1{
@@ -15,10 +15,14 @@
         }
         #pantalla{
             border: groove 10px rgb(17, 21, 77);
-            background: rgb(119, 207, 236);
+            background: rgb(119, 193, 236);
+        }
+        #fondo{
+        border: groove 10px rgb(30, 30, 31);
+        background: rgb(211, 248, 248);   
         }
         #boton{
-            background-color: rgb(169, 187, 4);
+            background-color: rgb(0, 2, 102);
             color: white;
             font-size: 20px;
             text-align: center;
@@ -27,7 +31,7 @@
             border: solid 2px black;
         }
         #boton:hover{
-            background-color: rgb(237, 248, 134);
+            background-color: rgb(153, 250, 250);
             font-size: 22px;
         }
     </style>
@@ -95,27 +99,271 @@
         
         //Función de creación de fichas como objeto, colocando sus valores correspondientes.
         function Ficha(x,y,w,h,i,ren,col){
-                this.x = x;
-                this.y = y;
-                this.w = w;
-                this.h = h;
-                this.i = i;
-                this.ren = ren;
-                this.col = col;
-                this.peso = 0;
-                this.valor = "";
-                this.pinta = pintaFicha;
+            this.x = x;
+            this.y = y;
+            this.w = w;
+            this.h = h;
+            this.i = i;
+            this.ren = ren;
+            this.col = col;
+            this.peso = 0;
+            this.valor = "";
+            this.pinta = pintaFicha;
+        }
+
+        //Función de mostrar el valor de la ficha en la pantalla, ya sea x - o.
+        function pintaFicha(valor){
+            this.valor = valor;
+            ctx.font = "bold 100px Arial";
+            ctx.fillStyle = "blue";
+            ctx.fillText(valor, this.x+30, this.y+100, this.w, this.h);
+                
+        }
+
+        //Función de ajustar el valor cuando el usuario de click en alguna posición.
+        function ajustar(xx, yy){
+            var posCanvas = canvas.getBoundingClientRect();
+            var x = xx - posCanvas.left;
+            var y = yy - posCanvas.top;
+            return {x:x, y:y}
+        }
+
+        //Función de lo que pasará en la jugada del usuario (Selección del mouse).
+        function seleccionUsuario(e){
+            //Ajusta la posicion en coordenadas del click, llama la función ajustar.
+            var pos = ajustar(e.clientX, e.clientY);
+            var x = pos.x;
+            var y = pos.y;
+            //Ciclo de verificacion si se ha dado en el lugar correcto y si el lugar está vacio.        
+            var ficha;
+            for (i=0; i<fichas_array.length; i++){
+                ficha = fichas_array[i];
+                //Aqui se verifica si el click esta dentro del espacio correcto.
+                if (ficha.x > 0){
+                if ((x > ficha.x)&&
+                    (x < ficha.x + ficha.w)&&
+                    (y > ficha.y)&&
+                    (y < ficha.y + ficha.h)){
+                    tiradas++;  //aumenta uno a las tiradas
+                        break;  //Saca del ciclo
+                    }
+                }
             }
+            //comprobar si el espacio es aceptable para colocar la ficha.
+            if(i<fichas_array.length){
+                //Se muestra en la pantalla la jugada del usuario (si esta vacio el lugar).
+                if (ficha.valor == ""){
+                    ficha.pinta("X");
+                    //Se lanza un timer(temporizador) para que la pc haga su jugada, en dos segundos de retraso.
+                    setTimeout(tiraMaquina,2000);
+                }
+            }
+            //Verifición si ganamos.
+                verificaRenglones(true);
+                verificaColumnas(true);
+                verificaDiagonal1(true);
+                verificaDiagonal2(true);
+            if(gameOver==false && tiradas<9){ //jugadas, si se llenan todas se llama al listener (Empate).
+                //Si no ganamos.
+                mensaje("Esperando respuesta...");
+                canvas.removeEventListener("click",seleccionUsuario,false);
+            } else {
+                //Si ganamos, desactivamos el listener de empate.
+                if(gameOver==false){
+                mensaje("Oh, quedaron empatados.");
+                }
+            }
+        }
+
+        //Verifica al ganador, el usuario o la computadora.
+        function verificaFin(O, X){
+            fin = false;
+            if (X == 3) {
+                fin = true;
+                mensaje("¡En hora buena, ganaste!"); //Victoria del usuario.
+                canvas.removeEventListener("click",seleccionUsuario,false);
+            } else if (O == 3) {
+                fin = true;
+                mensaje("Lo lamento, te han ganado."); //Victoria de la computadora.
+                canvas.removeEventListener("click",seleccionUsuario,false);
+            }
+            return fin;
+        }
+
+        //Función bucar la ficha con la que se está jugando, te regresa tu ficha en tu turno.
+        function buscaFicha(i,j){
+            for(k=0; k<fichas_array.length; k++){
+                ficha = fichas_array[k];
+                if(ficha.ren == i && ficha.col==j){
+                    break;
+                }
+            }
+            return ficha;
+        }
+
+        //Funciones de verificación de fichas de 3 seguidas para la victoria.
+
+        //Función de verificación de fichas en horizontal.
+        function verificaRenglones(calculaPeso) {
+            if(gameOver==false){
+                for (i=0; i<RENGLONES; i++) {
+                    fichas_X = 0;
+                    fichas_O = 0;
+                    for (j=0; j<COLUMNAS; j++) {
+                        ficha = buscaFicha(i,j);
+                        fichas_X += (ficha.valor=="X"?1:0);
+                        fichas_O += (ficha.valor=="O"?1:0);
+                    }
+                    if(calculaPeso){
+                        for (j=0; j<COLUMNAS; j++) {
+                            ficha = buscaFicha(i,j);
+                            pesoFicha(ficha.i, fichas_O, fichas_X);
+                        }
+                    }
+                    gameOver = verificaFin(fichas_O, fichas_X);
+                    if(gameOver) break;
+                }
+            }
+        }
+
+        //Función de verificación de fichas en vertical.
+        function verificaColumnas(calculaPeso) {
+            if(gameOver==false){
+                for (j=0; j<COLUMNAS; j++) {
+                    fichas_X = 0;
+                    fichas_O = 0;
+                    for (i=0; i<RENGLONES; i++) {
+                        ficha = buscaFicha(i,j);
+                        fichas_X += (ficha.valor=="X"?1:0);
+                        fichas_O += (ficha.valor=="O"?1:0);
+                    }
+                    if(calculaPeso){
+                        for (i=0; i<RENGLONES; i++) {
+                            ficha = buscaFicha(i,j);
+                            pesoFicha(ficha.i, fichas_O, fichas_X);
+                        }
+                    }
+                    gameOver = verificaFin(fichas_O, fichas_X);
+                    if(gameOver) break;
+                }
+            }
+        }
+
+        //Función de verificación de fichas en diagonal de forma descendente.
+        function verificaDiagonal1(calculaPeso) {
+            if(gameOver==false){
+                fichas_X = 0;
+                fichas_O = 0;
+                for (i=0; i<RENGLONES; i++) {
+                    ficha = buscaFicha(i,i);
+                    fichas_X += (ficha.valor=="X"?1:0);
+                    fichas_O += (ficha.valor=="O"?1:0);
+                }
+                if(calculaPeso){
+                    for(i=0; i<RENGLONES; i++) {
+                        ficha = buscaFicha(i,i);
+                        pesoFicha(ficha.i, fichas_O, fichas_X);
+                    }
+                }
+                gameOver = verificaFin(fichas_O, fichas_X);
+            }
+        }
+
+        //Función de verificación de fichas en diagonal de forma ascendente.
+        function verificaDiagonal2(calculaPeso) {
+            if(gameOver==false){
+                fichas_X = 0;
+                fichas_O = 0;
+                j = 2;
+                for (i=0; i<RENGLONES; i++) {
+                    ficha = buscaFicha(i,j);
+                    fichas_X += (ficha.valor=="X"?1:0);
+                    fichas_O += (ficha.valor=="O"?1:0);
+                    j--;
+                }
+                if(calculaPeso){
+                    j = 2
+                    for (i=0; i<RENGLONES; i++) {
+                        ficha = buscaFicha(i,j);
+                        pesoFicha(ficha.i, fichas_O, fichas_X);
+                        j--;
+                    }
+                }
+                gameOver = verificaFin(fichas_O, fichas_X);
+            }
+        }
+
+        //Función del peso de ficha, posición viable para tirar la jugada (Solo la computadora)
+        function pesoFicha(i,fichas_O, fichas_X) {
+            ficha = fichas_array[i];
+            if (ficha.valor == ""){
+                if (fichas_O == 2 && fichas_X == 0) {
+                    ficha.peso += 10;
+                } else if (fichas_O == 0 && fichas_X == 2) {
+                    ficha.peso += 6;
+                } else if (fichas_O == 1 && fichas_X == 0) {
+                    ficha.peso += 3;
+                } else {
+                    ficha.peso += 1;
+                }
+            } else {
+                ficha.peso = 0;
+            }
+        }
+
+        //Función de juego de la computadora, la hace pensar para ganar.
+        function tiraMaquina(){
+            tiradas++;
+            console.log("Tirada numero: " + tiradas);
+            //Comprobación si exite un ganador.
+            if (gameOver == false){
+                //Verifición del peso de la ficha.
+                verificaRenglones(true);
+                verificaColumnas(true);
+                verificaDiagonal1(true);
+                verificaDiagonal2(true);
+                //Selección de la mejor jugada.
+                fichas_X = 0;
+                fichas_O = 0;
+                mejorJugada = 0;
+                for (i=0; i<fichas_array.length; i++){
+                    ficha = fichas_array[i];
+                    if (ficha.peso>mejorJugada){
+                        mejorJugada = ficha.peso;
+                        ii = i;
+                    }
+                }
+                //Realización de la jugada de la máquina.
+                ficha = fichas_array[ii];
+                ficha.pinta("O");
+                verificaRenglones(false);
+                verificaColumnas(false);
+                verificaDiagonal1(false);
+                verificaDiagonal2(false);
+                //Verificación del ganador.
+                if(gameOver==false){
+                    //Si nadie gano activa el listener de click.
+                    if(tiradas<9){
+                        canvas.addEventListener("click",seleccionUsuario,false);
+                        mensaje("Piensa tu jugada...");
+                    }
+                }
+            }
+        }
 
     </script>
 </head>
-<body>
-    <h1>Bienvenidos, éste es el "juego del gato"</h1>
-        <canvas id="pantalla" width="960px" height="500px">
-            Lo sentimos, tú navegador no soporta Canvas.
-        </canvas>
-        <button id="boton" type="reset" onclick="javascript:window.location.reload();">¡Vuelve a jugar!</button>
-        <br><br><br><br>
+<body id="fondo">
+    <h1>Bienvenido, éste es el "juego del gato"</h1>
+        <center>
+            <canvas id="pantalla" width="960px" height="500px">
+                Lo sentimos, tú navegador no soporta Canvas.
+            </canvas>
+        </center>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="boton" type="reset" onclick="javascript:window.location.reload();">¡Vuelve a jugar!</button>
+        <br>
         <center><a href="file:///C:/laragon/www/Proj-Team/dongon/indexHP.html"><img src="file:///C:/laragon/www/Proj-Team/brajac/juegodelgato/inicio.jpg"></a></center>
+        <br>
 </body>
 </html>
