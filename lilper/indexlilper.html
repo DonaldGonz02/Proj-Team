@@ -46,7 +46,7 @@
       palabras_array.push("ROJO");
       palabras_array.push("MOCHILA");
       palabras_array.push("CORONAVIRUS");
-      palabras_array.push("TERREMOTO");
+      palabras_array.push("SHAKY");
       palabras_array.push("SOL");
       palabras_array.push("GRASA");
       palabras_array.push("GASOLINA");
@@ -70,7 +70,7 @@
       palabras_array.push("ALCOHOL");
       palabras_array.push("MASCARILLA");
       palabras_array.push("SEMILLA");
-              
+      palabras_array.push("PAPEL");       
       //objetos a utilizar
       function Tecla(x, y, ancho, alto, letra){
           this.x = x;
@@ -129,20 +129,67 @@
           switch(palabra){  
             //  switch para poder controlar las pistas segun la palabra 
               case 'LIMON':  
-               
                   pista = "Es acido";
                   break;      
               case 'LEON':
                   pista = "Es grande y ruge";
                   break;
-              case 'PERRO':
-                  pista = "El mejor amigo del hombre";
+              case 'INGENIERIA':
+                  pista = "inventos desarrollo y algoritmos";
                   break;
-              case 'GATO':
-                  pista = "Son tiernos pero arañan";
+              case 'ESPACIO':
+                  pista = "a donde esta el apolo 11 ";
+                  break;
+              case 'MESA':  
+                  pista = "Tiene cuatro patas";
+                  break;  
+              case 'CORONAVIRUS':  
+                  pista = "Impacto a nivel mundial";
+                  break;  
+              case 'SHAKY':  
+                  pista = "Canción de daddy yanke";
+                  break;  
+              case 'SOL':  
+                  pista = "Buenos días alegria, buenos días señor...";
+                  break;  
+              case 'GASOLINA':  
+                  pista = "Nombre de una canción de DADDY YANKE";
+                  break;  
+              case 'MUNDO':  
+                  pista = "tu eres mi...";
+                  break;  
+              case 'AMIGO':  
+                  pista = "El que te ama en secreto";
+                  break;  
+              case 'ELLANOTEAMA':  
+                  pista = ":(";
+                  break;  
+             case 'CUARENTENA':  
+                  pista = "Cuarenta días";
+                  break;  
+             case 'PANDEMIA':  
+                  pista = "El nombre que le vas a poner a tu hija despues que pase el coronavirus";
+                  break;  
+             case 'CLASES':  
+                  pista = "lo que no te gustan";
+                  break;  
+             case 'VIRTUALES':  
+                  pista = "Tus clases";
+                  break;  
+             case 'ANONYMOUS':  
+                  pista = "Hackers";
+                  break;
+             case 'DISTANCIAMIENTO':  
+                  pista = "Susanadistancia";
+                  break;
+             case 'MASCARILLA':  
+                  pista = "Protección";
+                  break;
+             case 'PAPEL':  
+                  pista = "Lo más importante en tiempos de crisis";
                   break;
               default: 
-                  pista="No hay pista aun xP";
+                  pista="No hay pista XD";
           }
           // Pintamos la palabra en el canvas
           ctx.fillStyle = "black";  // Aqui ponemos el color de la letra
