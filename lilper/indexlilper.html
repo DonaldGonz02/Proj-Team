@@ -92,59 +92,80 @@
      }
      //funciones 
      //dibujar teclas
-     function dibujaTecla(){
-        ctx.fillStyle = colorTecla;
-        ctx.strokeStyle = colorMargen;
-        ctx.fillRect(this.x, this.y, this.ancho, this.alto);
-        ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
+    function dibujaTecla(){
+     ctx.fillStyle = colorTecla;
+     ctx.strokeStyle = colorMargen;
+     ctx.fillRect(this.x, this.y, this.ancho, this.alto);
+     ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
                 
-        ctx.fillStyle = "white";
-        ctx.font = "bold 20px courier";
-        ctx.fillText(this.letra, this.x+this.ancho/2-5, this.y+this.alto/2+5);
-       }
+     ctx.fillStyle = "white";
+     ctx.font = "bold 20px courier";
+     ctx.fillText(this.letra, this.x+this.ancho/2-5, this.y+this.alto/2+5);
+     }
      //dibuja la letra 
-     function dibujaLetraLetra(){
-        var w = this.ancho;
-        var h = this.alto;
-        ctx.fillStyle = "black";
-        ctx.font = "bold 40px Courier";
-        ctx.fillText(this.letra, this.x+w/2-12, this.y+h/2+14);
-       }
+    function dibujaLetraLetra(){
+     var w = this.ancho;
+     var h = this.alto;
+     ctx.fillStyle = "black";
+     ctx.font = "bold 40px Courier";
+     ctx.fillText(this.letra, this.x+w/2-12, this.y+h/2+14);
+     }
        //se dibuja la cajita para la letra
-     function dibujaCajaLetra(){
-        ctx.fillStyle = "white";
-        ctx.strokeStyle = "black";
-        ctx.fillRect(this.x, this.y, this.ancho, this.alto);
-        ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
-       }  
+    function dibujaCajaLetra(){
+     ctx.fillStyle = "white";
+     ctx.strokeStyle = "black";
+     ctx.fillRect(this.x, this.y, this.ancho, this.alto);
+     ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
+      }  
        //funcion para distribuir el teclado
-       function teclado(){
-           var ren = 0;
-           var col = 0;
-           var letra = "";
-           var miLetra;
-           var x = inicioX;
-           var y = inicioY;
-           for(var i = 0; i < letras.length; i++){
-             letra = letras.substr(i,1);
-             miLetra = new Tecla(x, y, lon, lon, letra);
-             miLetra.dibuja();
-             teclas_array.push(miLetra);
-             x += lon + margen;
-             col++;
-             if(col==10){
-             col = 0;
-             ren++;
-             if(ren==2){
-                 x = 280;
-               } else {
-                 x = inicioX;
-                  }
-                }
-                  y = inicioY + ren * 50;
-               }
-             }
+    function teclado(){
+     var ren = 0;
+     var col = 0;
+     var letra = "";
+     var miLetra;
+     var x = inicioX;
+     var y = inicioY;
+     for(var i = 0; i < letras.length; i++){
+      letra = letras.substr(i,1);
+      miLetra = new Tecla(x, y, lon, lon, letra);
+      miLetra.dibuja();
+      teclas_array.push(miLetra);
+      x += lon + margen;
+      col++;
+       if(col==10){
+        col = 0;
+        ren++;
+        if(ren==2){
+         x = 280;
+         } else {
+          x = inicioX;
+            }
+         }
+        y = inicioY + ren * 50;
+         }
+      }
      
+    function pintaPalabra(){
+                var p = Math.floor(Math.random()*palabras_array.length);
+                palabra = palabras_array[p];
+      
+                pistaFunction(palabra);
+            
+                var w = canvas.width;
+                var len = palabra.length;
+                var ren = 0;
+                var col = 0;
+                var y = 230;
+                var lon = 50;
+                var x = (w - (lon+margen) *len)/2;
+                for(var i=0; i<palabra.length; i++){
+                    letra = palabra.substr(i,1);
+                    miLetra = new Letra(x, y, lon, lon, letra);
+                    miLetra.dibuja();
+                    letras_array.push(miLetra);
+                    x += lon + margen;
+                }
+            }
     //para cargar el contexto al canvas y dar una alerta de error 
     window.onload= function(){
                 canvas = document.getElementById("pantalla");
