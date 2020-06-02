@@ -21,14 +21,14 @@
       var canvas;
       var palabra;
       var letras = "QWERTYUIOPASDFGHJKLÑZXCVBNM";
-      var colorTecla = "#585858";
-      var colorMargen = "red";
+      var colorTecla = "orange";
+      var colorMargen = "yellow";
       var inicioX = 200;
       var inicioY = 300;
       var lon = 35;
       var margen = 20;
       var pistaText = "";
-
+      
       /* Arreglos */
       var teclas_array = new Array();
       var letras_array = new Array();
@@ -95,8 +95,8 @@
 
       // Dibujar Teclas
       function dibujaTecla(){
-          ctx.fillStyle = colorTecla="orange";
-          ctx.strokeStyle = colorMargen = "black";
+          ctx.fillStyle = colorTecla;
+          ctx.strokeStyle = colorMargen;
           ctx.fillRect(this.x, this.y, this.ancho, this.alto);
           ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
           
