@@ -47,6 +47,12 @@ header .textos-header{
     color: wheat;
     padding: 0 0 0 0;
 }
+    /*Efecto Swuipe*/
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
 
 /*panel de juegos*/
 .Panel{
