@@ -6,6 +6,25 @@ body{
 h1{
     text-align: center;
     color: rgb(65, 19, 5);
+    font-size: 3em;
+    text-transform: uppercase;
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
+    color: rgb(59, 21, 18);
+    text-shadow:    1px 1px 1px #919191,
+                    1px 2px 1px #919191,
+                    1px 3px 1px #cea6a6,
+                    1px 4px 1px #91252571,
+                    1px 5px 1px #919191,
+                    1px 6px 1px #919191,
+                    1px 7px 1px #919191,
+                    1px 8px 1px #919191,
+                    1px 9px 1px #919191,
+                    
+                    1px 10px 6px rgba(16, 16, 16, 0.4),
+                    1px 10px 10px rgba(16, 16, 16, 0.5),
+                    1px 15px 25px rgba(16, 16, 16, 0.5),
+                    1px 20px 40px rgba(16, 16, 16, 0.5);
     
     
 }
@@ -14,4 +33,13 @@ h1{
     height: 450px;
     border: groove 10px rgba(7, 6, 2, 0.664);
     background: rgba(15, 16, 119, 0.377);   
+}
+#boton{
+    background-color: rgb(6, 2, 58);
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bolder;
+    padding: 3px;
+    border: solid 2px black;
 }
