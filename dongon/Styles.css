@@ -1,5 +1,5 @@
 /*Estilos Generales*/
-.{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -64,14 +64,17 @@ header .textos-header{
     position: absolute;
     bottom: 0;
     width: 100%;
+    
 }
 
 /*panel de juegos*/
 .Panel{
-    background-color: whitesmoke;
+    background: #757F9A;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #D7DDE8, #757F9A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #D7DDE8, #757F9A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 0 0 60px 0;
 }
-.contenedor{
+.contenedor> a{
     padding: 60 px 0;
     width: 90%;
     max-width: 1000px;
@@ -82,9 +85,9 @@ header .textos-header{
 
 .title{
     color: rgb(4, 84, 160);
-    font-size: 30px;
+    font-size: 50px;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 .galeria{
     display: flex;
@@ -92,7 +95,7 @@ header .textos-header{
     flex-wrap: wrap
 }
 .img-portafolio{
-    width: 24%;
+    width: 23%;
     margin-bottom: 10px;
     overflow: hidden;
     position: relative;
@@ -104,6 +107,9 @@ header .textos-header{
     height: 100%;
     object-fit: cover;
     display: block;
+}
+.img-portafolio> a{
+    text-decoration: none;
 }
 
 .hover-bloque{
@@ -138,7 +144,7 @@ footer{
     background: #0f0c29;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    padding: 30px 0 30px 0;
+    padding: 10px 0 10px 0;
     margin: auto;
     overflow: hidden;
 }
