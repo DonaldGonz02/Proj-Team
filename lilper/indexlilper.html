@@ -117,8 +117,36 @@
         ctx.fillRect(this.x, this.y, this.ancho, this.alto);
         ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
        }  
+       //funcion para distribuir el teclado
+       function teclado(){
+           var ren = 0;
+           var col = 0;
+           var letra = "";
+           var miLetra;
+           var x = inicioX;
+           var y = inicioY;
+           for(var i = 0; i < letras.length; i++){
+             letra = letras.substr(i,1);
+             miLetra = new Tecla(x, y, lon, lon, letra);
+             miLetra.dibuja();
+             teclas_array.push(miLetra);
+             x += lon + margen;
+             col++;
+             if(col==10){
+             col = 0;
+             ren++;
+             if(ren==2){
+                 x = 280;
+               } else {
+                 x = inicioX;
+                  }
+                }
+                  y = inicioY + ren * 50;
+               }
+             }
+     
     //para cargar el contexto al canvas y dar una alerta de error 
-    window.onload = function(){
+    window.onload= function(){
                 canvas = document.getElementById("pantalla");
                 if (canvas && canvas.getContext){
                     ctx = canvas.getContext("2d");
