@@ -152,3 +152,166 @@ function Enemigo(x, y) {
 
 	};
 }
+function anima() {
+	if (endGame == false) {
+		requestAnimationFrame(anima);
+		verifica();
+		pinta();
+		colisiones();
+	}
+}
+function mensaje(cadena) {
+	var lon = (canvas.width - (50 * cadena.length)) / 2;
+	ctx.fillStyle = "white";
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.font = "bold 75px Arial";
+	ctx.fillText(cadena, lon, 220);
+}
+function colisiones() {
+	for (var i = 0; i < ovnis_array.length; i++) {
+		for (var j = 0; j < balas_array.length; j++) {
+			enemigo = ovnis_array[i];
+			bala = balas_array[j];
+			if (enemigo != null && bala != null) {
+				if ((bala.x > enemigo.x) &&
+					(bala.x < enemigo.x + enemigo.w) &&
+					(bala.y > enemigo.y) &&
+					(bala.y < enemigo.y + enemigo.w)) {
+					enemigo.vive = false;
+					enemigosVivos = enemigosVivos - 1;
+					ovnis_array[i] = null;
+					balas_array[j] = null;
+					puntos += 10;
+					score();
+				}
+			}
+		}
+	}
+	for (var j = 0; j < balasEnemigas_array.length; j++) {
+		bala = balasEnemigas_array[j];
+		if (bala != null) {
+			if ((bala.x > nave.x) &&
+				(bala.x < nave.x + nave.w) &&
+				(bala.y > nave.y) &&
+				(bala.y < nave.y + nave.h)) {
+				gameOver();
+			}
+		}
+	}
+}
+function gameOver() {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	balas_array = [];
+	ovnis_array = [];
+	balasEnemigas_array = [];
+	if( enemigosVivos == 0 ){
+		mensaje("GANASTE");
+	}else{
+		mensaje("GAME OVER");
+	}
+	endGame = true;
+	clearTimeout(disparoEnemigo);
+}
+function score() {
+	ctx.save();
+	ctx.fillStyle = "white";
+	ctx.clearRect(0, 0, canvas.width, 20);
+	ctx.font = "bold 12px Courier";
+	ctx.fillText("SCORE: " + puntos, 10, 20);
+	ctx.restore();
+}
+function municiones() {
+	ctx.save();
+	ctx.fillStyle = "white";
+	ctx.clearRect(0, 20, canvas.width, 20);
+	ctx.font = "bold 12px Courier";
+	ctx.fillText("Municion: " + municion, 10, 40);
+	ctx.restore();
+}
+function verifica() {
+	if (tecla[teclaDerecha]) x += 5;
+	if (tecla[teclaIzquierda]) x -= 5;
+	//Verifica cañon
+	if (x > canvas.width - 20) x = canvas.width - 20;
+	if (x < 0) x = 0;
+	//Disparo
+	if (tecla[teclaEspacio]) {
+		if (tiempoBala == true && municion !=0 ){
+			tiempoBala = false;
+			balas_array.push(new Bala(nave.x + 12, nave.y - 3, 5));
+			(municion >0)?municion = municion - 1 : false;
+			tecla[teclaEspacio] = false;
+			disparaEnemigo();
+			setTimeout(function(){tiempoBala = true;}, 300);
+		}
+	}
+}
+function checarBalas(){
+	var balasArrayVal = 0;
+	for(let i = 0 ; i < balas_array.length; i++){
+		if(balas_array[i] != null){
+			balasArrayVal = 1;
+		}
+	}
+	if(municion == 0 && balas_array.length == 100 && balasArrayVal == 0 && enemigosVivos > 0){
+		tecla[teclaEspacio] = false;
+			alert("Sin municion");
+			gameOver();
+	}
+}
+function pinta() {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	score();
+	municiones();
+	nave.dibuja(x);
+	//Balas
+	for (var i = 0; i < 100; i++) {
+		if (balas_array[i] != null) {
+			balas_array[i].dibuja();
+			if (balas_array[i].y < 0) balas_array[i] = null;
+		}
+	}
+	//Balas Enemigas
+	for (var i = 0; i < balasEnemigas_array.length; i++) {
+		if (balasEnemigas_array[i] != null) {
+			balasEnemigas_array[i].dispara();
+			if (balasEnemigas_array[i].y > canvas.height) balasEnemigas_array[i] = null;
+		}
+	}
+	//Enemigos
+	numEnemigos = 0;
+	for (var i = 0; i < ovnis_array.length; i++) {
+		if (ovnis_array[i] != null) {
+			ovnis_array[i].dibuja();
+			if (ovnis_array[i].y == nave.y) {
+				gameOver();
+			}
+			numEnemigos++;
+		}
+	}
+	if (numEnemigos == 0) gameOver();
+}
+function disparaEnemigo() {
+	for (var i = ovnis_array.length - 1; i > 0; i--) {
+		if (ovnis_array[i] != null) {
+			ultimos.push(i);
+		}
+		if (ultimos.length >= 10) break;
+	}
+	Array.prototype.clean = function(deleteValue) { 
+		for (var i = 0; i < this.length; i++) {
+				if (this[i] == deleteValue) { 
+					this.splice(i, 1); i--; 
+				} 
+			} return this; 
+		}; 
+	ovnis_array.clean(undefined);
+	d = ultimos[Math.floor(Math.random() * ovnis_array.length)];
+	if(ovnis_array[d] == null || d == null){
+		ovnis_array.clean(undefined);
+		d = Math.floor(Math.random() * ovnis_array.length);
+	}
+	balasEnemigas_array.push(new Bala(ovnis_array[d].x + ovnis_array[d].w / 2, ovnis_array[d].y, 5));
+	clearTimeout(disparoEnemigo);
+	disparoEnemigo = setTimeout(disparaEnemigo, tiempoDisparo);
+}
