@@ -71,7 +71,7 @@
     palabras_array.push("SEMILLA");
 
     // objetos a utilizar
-    //funcion para tecla 
+    //objeto de teclas 
     function Tecla(x, y, ancho, alto, letra){
       this.x = x;
       this.y = y;
@@ -80,6 +80,7 @@
       this.letra = letra;
       this.dibuja = dibujaTecla;
      }
+     //objeto de letra
     function Letra(x, y, ancho, alto, letra){
       this.x = x;
       this.y = y;
@@ -89,6 +90,33 @@
       this.dibuja = dibujaCajaLetra;
       this.dibujaLetra = dibujaLetraLetra;
      }
+     //funciones 
+     //dibujar teclas
+     function dibujaTecla(){
+        ctx.fillStyle = colorTecla;
+        ctx.strokeStyle = colorMargen;
+        ctx.fillRect(this.x, this.y, this.ancho, this.alto);
+        ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
+                
+        ctx.fillStyle = "white";
+        ctx.font = "bold 20px courier";
+        ctx.fillText(this.letra, this.x+this.ancho/2-5, this.y+this.alto/2+5);
+       }
+     //dibuja la letra 
+     function dibujaLetraLetra(){
+        var w = this.ancho;
+        var h = this.alto;
+        ctx.fillStyle = "black";
+        ctx.font = "bold 40px Courier";
+        ctx.fillText(this.letra, this.x+w/2-12, this.y+h/2+14);
+       }
+       //se dibuja la cajita para la letra
+     function dibujaCajaLetra(){
+        ctx.fillStyle = "white";
+        ctx.strokeStyle = "black";
+        ctx.fillRect(this.x, this.y, this.ancho, this.alto);
+        ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
+       }  
     //para cargar el contexto al canvas y dar una alerta de error 
     window.onload = function(){
                 canvas = document.getElementById("pantalla");
