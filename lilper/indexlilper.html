@@ -15,7 +15,8 @@
     <!--se creo un boton para volver a cargar el juego-->
     <button id="boton" type="reset" onclick="javascript:window.location.reload();">Volver a Jugar</button>
    <!--se abrio un script para realizar las funciones de java script-->
-   <script>
+  
+  <script>
     //se declaran las variables a trabajar 
     var ctx;
     var canvas;
@@ -143,8 +144,8 @@
          }
         y = inicioY + ren * 50;
          }
-      }
-     
+       }
+      
     function pintaPalabra(){
                 var p = Math.floor(Math.random()*palabras_array.length);
                 palabra = palabras_array[p];
@@ -166,6 +167,35 @@
                     x += lon + margen;
                 }
             }
+// se ha agregado la funcion para la orca
+    function horca(errores){
+                var imagen = new Image();
+                imagen.src = "imagenes/ahorcado"+errores+".png";
+                imagen.onload = function(){
+                    ctx.drawImage(imagen, 390, 0, 230, 230);
+                }
+    function ajusta(xx, yy){
+                var posCanvas = canvas.getBoundingClientRect();
+                var x = xx-posCanvas.left;
+                var y = yy-posCanvas.top;
+                return{x:x, y:y}
+        }
+        function gameOver(errores){
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "black";
+
+                ctx.font = "bold 50px Courier";
+                if (errores < 5){
+                    ctx.fillText("Muy bien, la palabra es: ", 110, 280);
+                } else {
+                    ctx.fillText("Lo sentimos, la palabra era: ", 110, 280);
+                }
+                
+                ctx.font = "bold 80px Courier";
+                lon = (canvas.width - (palabra.length*48))/2;
+                ctx.fillText(palabra, lon, 380);
+                horca(errores);
+            }
     //para cargar el contexto al canvas y dar una alerta de error 
     window.onload= function(){
                 canvas = document.getElementById("pantalla");
@@ -180,7 +210,7 @@
                         alert ("Error al cargar el contexto!");
                     }
                   }
-            }
+    
     </script>
 
   </body>
