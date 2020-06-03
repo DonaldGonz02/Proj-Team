@@ -7,7 +7,7 @@
 
 body{
     
-    background: radial-gradient( rgba(8, 6, 44, 0.925), rgba(41, 17, 173, 0.445));;
+    background: linear-gradient( rgb(14, 13, 19), rgb(214, 52, 114));;
    
 }
 
@@ -37,8 +37,9 @@ h1{
     
 }
 #pantalla{
-    border: groove 10px rgba(5, 7, 77, 0.945);
-    background: rgba(15, 16, 119, 0.377);  
+    border: groove 10px rgba(129, 41, 34, 0.945);
+    background: linear-gradient(rgba(231, 87, 82, 0.925), rgba(216, 196, 16, 0.5));
+    box-shadow:5px 7px 10px ;  
     border-radius: 2px;
     padding-left: 0;
     padding-right: 0;
@@ -49,23 +50,28 @@ h1{
    
 }
 #boton{
-    background-color: rgb(4, 3, 17);
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    font-weight: bolder;
-    padding: 3px;
-    border: solid 2px black; 
-    margin: -20px -50px; 
     position:relative;
+    text-align:center;
+    padding:3px;
+    width:130px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight:100px;
+    border:5px rgb(219, 99, 29);
+    font-size:15px;
+    letter-spacing:7px;
+    border-radius:50px;
+    color:rgb(219, 99, 29);
+    transition:1.5s;
+    box-shadow:5px 7px 10px ;
+    margin: -10px -40px; 
     top:50%; 
     left:48%;
     
 }
 #boton:hover{ 
-    background-color: rgba(18, 144, 218, 0.664);
-    font-size: 22px;
-    border: groove 4px rgb(178, 204, 61);
+    box-shadow:0 5px 50px 0 #45B0A7 inset, 0 5px 50px 0 #45B0A7 , 0 5px 50px 0 #45B0A7 inset, 0 5px 50px 0 #45B0A7 ;
+    
+    text-shadow:0 5px 50px 0 #45B0A7 ,0 5px 50px 0 #45B0A7 ;
 }
 
 #prin{
@@ -74,7 +80,7 @@ h1{
     display: table;
     font-weight: bold;
     padding: 10px 20px;
-    margin: 1% auto;
+    margin: 3% auto;
     font-family: Exotc350 Bd BT;
 
 
