@@ -6,24 +6,35 @@
     <title>Juego del gato, por Bradley</title>
     <link rel="shortcut icon" href="icono.jpeg" type="image/x-icon">
     <style>
-        body{
-            width: 1100px;
-            margin: 0 auto;
-        }
         h1{
             text-align: center;
-            color: rgb(8, 11, 179);
+            color: rgb(65, 19, 5);
+            font-size: 3em;
+            text-transform: uppercase;
+            font-family: cooper black;
+            font-weight: bold;
+            color: rgb(243, 238, 233);
+            text-shadow:    1px 1px 1px #919191,
+                            1px 2px 1px #919191,
+                            1px 3px 1px #cea6a6,
+                            1px 4px 1px #d9dad45e,
+                            1px 5px 1px #919191,
+                            1px 6px 1px #919191,
+                            1px 7px 1px #919191,
+                            1px 8px 1px #919191,
+                            1px 9px 1px #919191,
+                            
+                            1px 10px 6px rgba(16, 16, 16, 0.4),
+                            1px 10px 10px rgba(16, 16, 16, 0.5),
+                            1px 15px 25px rgba(16, 16, 16, 0.5),
+                            1px 20px 40px rgba(16, 16, 16, 0.5);
         }
         #pantalla{
             border: groove 10px rgb(17, 21, 77);
             background: rgb(119, 193, 236);
         }
-        #fondo{
-        border: groove 10px rgb(30, 30, 31);
-        background: rgb(211, 248, 248);   
-        }
         #boton{
-            background-color: rgb(0, 2, 102);
+            background-color: rgb(2, 2, 2);
             color: white;
             font-size: 20px;
             text-align: center;
@@ -32,8 +43,100 @@
             border: solid 2px black;
         }
         #boton:hover{
-            background-color: rgb(153, 250, 250);
+            background-color: rgb(70, 70, 70);
             font-size: 22px;
+        }
+        footer{
+            width: 100%;
+            background-color: #202020;
+            color: white;
+        }
+        .container-footer-all{
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px;
+        }
+        .container-body{
+            display: flex;
+            justify-content: space-between;
+        }
+        .colum1{
+            max-width: 400px;
+        }
+        .colum1 h3{
+            font-size: 22px;
+        }
+        .colum1 p{
+            font-size: 14px;
+            color: #c7c7c7;
+            margin-top: 20px;
+        }
+        .colum2{
+            max-width: 400px;
+        }
+        .colum2 h3{
+            font-size: 22px;
+        }
+        .row{
+            margin-top: 20px;
+            display: flex;
+        }
+        .row img{
+            width: 36px;
+            height: 36px;
+        }
+        .row label{
+            margin-top: 10px;
+            margin-left: 10px;
+            color: #c7c7c7;
+        }
+        .row a{
+            margin-top: 10px;
+            margin-left: 10px;
+            color: #c7c7c7;
+        }
+        .colum3{
+            max-width: 400px;
+        }
+        .colum3 h3{
+            font-size: 22px;
+        }
+        .row2{
+            margin-top: 20px;
+            display: flex;
+        }
+        .row2 img{
+            width: 36px;
+            height: 36px;
+        }
+        .row2 label{
+            margin-top: 10px;
+            margin-left: 20px;
+            max-width: 150px;
+        }
+        .container-footer{
+            width: 100%;
+            background-color: #101010;
+        }
+        .footer{
+            max-width: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .copyright{
+            color: #c7c7c7;
+        }
+        .copyright a{
+            text-decoration: none;
+            color: #c7c7c7;
+            font-weight: bold;
+        }
+        .información a{
+            text-decoration: none;
+            color: #c7c7c7;
         }
     </style>
     <script>
@@ -92,7 +195,7 @@
         //Función de interacción con el usuario, mensajes de victoria o derrota, empate y turno.
         function mensaje(cadena){
             var lon = (canvas.width-(20*cadena.length))/2;
-            ctx.strokeStyle = "blue";
+            ctx.strokeStyle = "white";
             ctx.clearRect(0,420,canvas.width,100);
             ctx.font = "bold 40px Courier";
             ctx.fillText(cadena,lon,470);
@@ -116,7 +219,7 @@
         function pintaFicha(valor){
             this.valor = valor;
             ctx.font = "bold 100px Arial";
-            ctx.fillStyle = "blue";
+            ctx.fillStyle = "white";
             ctx.fillText(valor, this.x+30, this.y+100, this.w, this.h);
                 
         }
@@ -354,7 +457,7 @@
 
     </script>
 </head>
-<body id="fondo">
+<body background="cats.jpg" id="fondo">
     <h1>Bienvenido, éste es el "juego del gato"</h1>
         <center>
             <canvas id="pantalla" width="960px" height="500px">
@@ -362,9 +465,70 @@
             </canvas>
         </center>
         <br>
+        <!-- Botón de reseteo de juego -->
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="boton" type="reset" onclick="javascript:window.location.reload();">¡Vuelve a jugar!</button>
         <br>
-        <center><a href="file:///C:/laragon/www/Proj-Team/dongon/indexHP.html"><img src="file:///C:/laragon/www/Proj-Team/brajac/juegodelgato/inicio.jpg"></a></center>
+        <!-- Acceso directo al menú principal -->
+        <center><a href="file:///C:/laragon/www/Proj-Team/dongon/indexHP.html"><img src="file:///C:/laragon/www/Proj-Team/brajac/juegodelgato/home.jpg"></a></center>
         <br>
+        
+        <!-- Etiqueta para elaborar el footer del final de página -->
+        <footer>
+            <div class="container-footer-all">
+                <div class="container-body">
+                    <div class="colum1">
+        
+                        <h3>Más información</h3>
+                        <p>Fue creado como proyecto final del curso Introducción a los sistemas de cómputo, éste proyecto fue trabajado por 5 contribuidores, cada uno elaborando un juego distinto. El juego del gato fue elaborado por Bradley Jacinto</p>
+
+                    </div>
+                    <div class="colum2">
+        
+                        <h3>Redes Sociales</h3>
+                        <div class="row">
+                            <img src="github.png">
+                            <label>GitHub</label>
+                            <a href="https://github.com/Bradleyivme">aquí</a>
+                        </div>
+                        <div class="row">
+                            <img src="insta.png">
+                            <label>Instagram</label>
+                            <a href="https://www.instagram.com/bradley_ivme/">aquí</a>
+                        </div>
+                    </div>
+                    <div class="colum3">
+
+                        <h3>Información para contactarme</h3>
+                        <div class="row2">
+
+                            <img src="house.png">
+                            <label>Jalapa, Guatemala, Bradley Jacinto</label>
+
+                        </div>
+                        <div class="row2">
+
+                            <img src="teléfono.png">
+                            <label>+502 41397947</label>
+                            
+                        </div>
+                        <div class="row2">
+                            <img src="correo.png">
+                            <label>bradleyivme@gmail.com</label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="container-footer">
+                <div class="footer">
+                    <div class="copyright">
+                        &COPY; 2020 Todos los derechos reservados | <a href="">Bradleyivme</a>
+                    </div>
+                    <div class="información">
+                        <a href="">Información de proyecto</a> | <a href="">Privacidad y Política</a> | <a href="">Términos y Condiciones</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
 </body>
 </html>
