@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 } 
 
 body{
@@ -39,10 +40,13 @@ h1{
     border: groove 10px rgba(5, 7, 77, 0.945);
     background: rgba(15, 16, 119, 0.377);  
     border-radius: 2px;
-    display: table;
-    font-weight: bold;
-    padding: 10px 20px;
+    padding-left: 0;
+    padding-right: 0;
     margin: 1% auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+   
 }
 #boton{
     background-color: rgb(4, 3, 17);
@@ -51,17 +55,17 @@ h1{
     text-align: center;
     font-weight: bolder;
     padding: 3px;
-    border: solid 2px black;
-    border-radius: 2px;
-    display: table;
-    font-weight: bold;
-    padding: 10px 20px;
-    margin: 1% auto;
+    border: solid 2px black; 
+    margin: -20px -50px; 
+    position:relative;
+    top:50%; 
+    left:48%;
+    
 }
 #boton:hover{ 
-    background-color: rgba(131, 185, 216, 0.664);
+    background-color: rgba(18, 144, 218, 0.664);
     font-size: 22px;
-    border: groove 4px rgb(35, 8, 187);
+    border: groove 4px rgb(178, 204, 61);
 }
 
 #prin{
@@ -84,76 +88,94 @@ h1{
     
 
 footer{
-    background: #0f0c29;  
-    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
-    padding: 10px 0 10px 0;
-    margin:10px;
-    
-   
+    width: 100%;
+    background-color: #202020;
+    color: white;
 }
-
-.contenedor-foot{
-    display: flex;
-    width: 1200px;
-    height:60px;
-    justify-content: space-evenly;
+.container-footer-all{
+    width: 100%;
+    max-width: 1200px;
     margin: auto;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #0f0c29;
+    padding: 40px;
 }
-.footi{
-    text-align: center;
-}
-.footi h4{
-    color: rgb(234, 235, 236);
-    border-bottom: 1px solid ;
-    padding-bottom:2px;
-    margin-bottom: 5px;
-}
-
-.footi p{
-    color:wheat ;
-}
-.Autor{
-    text-align: center;
-    font-size: 25px;
-    margin: 10px 0 0 0 ;
-    color: rgb(49, 98, 153);
-}
-footer{
-    background: #0f0c29;  
-    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
-    padding: 10px 0 10px 0;
-    margin:1px;
-    overflow: hidden;
-}
-
-.contenedor-foot{
+.container-body{
     display: flex;
-    width: 90%;
-    justify-content: space-evenly;
+    justify-content: space-between;
+}
+.colum1{
+    max-width: 400px;
+}
+.colum1 h3{
+    font-size: 22px;
+}
+.colum1 p{
+    font-size: 14px;
+    color: #c7c7c7;
+    margin-top: 20px;
+}
+.colum2{
+    max-width: 400px;
+}
+.colum2 h3{
+    font-size: 22px;
+}
+.row{
+    margin-top: 20px;
+    display: flex;
+}
+.row img{
+    width: 36px;
+    height: 36px;
+}
+.row label{
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #c7c7c7;
+}
+.row a{
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #c7c7c7;
+}
+.colum3{
+    max-width: 400px;
+}
+.colum3 h3{
+    font-size: 22px;
+}
+.row2{
+    margin-top: 20px;
+    display: flex;
+}
+.row2 img{
+    width: 36px;
+    height: 36px;
+}
+.row2 label{
+    margin-top: 10px;
+    margin-left: 20px;
+    max-width: 150px;
+}
+.container-footer{
+    width: 100%;
+    background-color: #1c1546d7;
+}
+.footer{
+    max-width: 100%;
     margin: auto;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #0f0c29;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
 }
-.footi{
-    text-align: center;
+.copyright{
+    color: #c7c7c7;
 }
-.footi h4{
-    color: rgb(234, 235, 236);
-    border-bottom: 1px solid ;
-    padding-bottom:2px;
-    margin-bottom: 5px;
+.copyright a{
+    text-decoration: none;
+    color: #c7c7c7;
+    font-weight: bold;
 }
-
-.footi p{
-    color:wheat ;
-}
-.Autor{
-    text-align: center;
-    font-size: 25px;
-    margin: 10px 0 0 0 ;
-    color: rgb(49, 98, 153);
+.información a{
+    text-decoration: none;
+    color: #c7c7c7;
 }
