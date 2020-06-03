@@ -69,9 +69,9 @@ h1{
     
 }
 #boton:hover{ 
-    box-shadow:0 5px 50px 0 #45B0A7 inset, 0 5px 50px 0 #45B0A7 , 0 5px 50px 0 #45B0A7 inset, 0 5px 50px 0 #45B0A7 ;
+    box-shadow:0 5px 50px 0 rgb(202, 124, 35) inset, 0 5px 50px 0 rgb(166, 121, 224) , 0 5px 50px 0 rgb(121, 167, 78) inset, 0 5px 50px 0 #45B0A7 ;
     
-    text-shadow:0 5px 50px 0 #45B0A7 ,0 5px 50px 0 #45B0A7 ;
+    text-shadow:0 5px 50px 0 rgb(167, 116, 214) ,0 5px 50px 0 rgb(190, 117, 98) ;
 }
 
 #prin{
@@ -89,7 +89,7 @@ h1{
 #prin:hover{
     background-color: rgba(131, 185, 216, 0.664);
     font-size: 22px;
-    border: groove 4px rgba(182, 7, 7, 0.897);
+    border: groove 4px rgba(230, 125, 125, 0.897);
 }
     
 
@@ -164,7 +164,7 @@ footer{
 }
 .container-footer{
     width: 100%;
-    background-color: #1c1546d7;
+    background-color: #0b0625ea;
 }
 .footer{
     max-width: 100%;
