@@ -1,12 +1,23 @@
 body {
     width: 600px;
     margin: 0 auto;
+    background-color: rgb(12, 4, 56);
 }
 h1 {
     text-align: center;
+    color: rgb(47, 245, 228);
 }
+#Playagain {
+    width: 300px;
+    height: 30px;
+    background-color: blue;
+}
+
 #miCanvas {
     border: groove 2px red;
     background: black;
     box-shadow: 10px 10px 10px #888888;
+}
+p {
+    color: rgb(47, 245, 228);
 }

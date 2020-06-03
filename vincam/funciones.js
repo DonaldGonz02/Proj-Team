@@ -4,7 +4,7 @@ window.onload = function () {
 		ctx = canvas.getContext("2d");
 		if (ctx) {
 			x = canvas.width / 2;
-            mensaje("Invasores");
+            mensaje("Invaders");
 			imgNave = new Image();
 			imgOvni = new Image();
 			imgOvni.src = "imagenes/ovni.png";
@@ -205,10 +205,12 @@ function gameOver() {
 	ovnis_array = [];
 	balasEnemigas_array = [];
 	if( enemigosVivos == 0 ){
-		mensaje("GANASTE");
-	}else{
+		mensaje("YOU WIN");
+
+		}else{
+
 		mensaje("GAME OVER");
-	}
+			}
 	endGame = true;
 	clearTimeout(disparoEnemigo);
 }
