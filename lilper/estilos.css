@@ -63,9 +63,9 @@ h1{
     
 }
 #boton:hover{ 
-    background-color: rgba(131, 185, 216, 0.664);
+    background-color: rgba(18, 144, 218, 0.664);
     font-size: 22px;
-    border: groove 4px rgb(35, 8, 187);
+    border: groove 4px rgb(178, 204, 61);
 }
 
 #prin{
