@@ -89,7 +89,7 @@ h1{
 
 footer{
     width: 100%;
-    background-color: #202020;
+    background: linear-gradient(rgba(17, 3, 26, 0.925), rgba(161, 132, 179, 0.5));
     color: white;
 }
 .container-footer-all{
