@@ -12,6 +12,11 @@ h1 {
     height: 30px;
     background-color: blue;
 }
+#Volver {
+    width: 300px;
+    height: 30;
+    background-color: blue;
+}
 
 #miCanvas {
     border: groove 2px red;
