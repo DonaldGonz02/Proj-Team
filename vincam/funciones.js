@@ -45,7 +45,7 @@ var x = 100;
 var y = 100;
 var teclaIzquierda = 37;
 var teclaDerecha = 39;
-var teclaEspacio = 32;
+var teclacontrol= 17;
 var imgNave, imgOvni;
 var municion = 100;
 var ultimos = new Array();
@@ -237,12 +237,12 @@ function verifica() {
 	if (x > canvas.width - 20) x = canvas.width - 20;
 	if (x < 0) x = 0;
 	//Disparo
-	if (tecla[teclaEspacio]) {
+	if (tecla[teclacontrol]) {
 		if (tiempoBala == true && municion !=0 ){
 			tiempoBala = false;
 			balas_array.push(new Bala(nave.x + 12, nave.y - 3, 5));
 			(municion >0)?municion = municion - 1 : false;
-			tecla[teclaEspacio] = false;
+			tecla[teclacontrol] = false;
 			disparaEnemigo();
 			setTimeout(function(){tiempoBala = true;}, 300);
 		}
@@ -256,7 +256,7 @@ function checarBalas(){
 		}
 	}
 	if(municion == 0 && balas_array.length == 100 && balasArrayVal == 0 && enemigosVivos > 0){
-		tecla[teclaEspacio] = false;
+		tecla[teclacontrol] = false;
 			alert("Sin municion");
 			gameOver();
 	}
