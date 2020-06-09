@@ -91,3 +91,32 @@ class Cubo {
     this.el.style.transform = `translateY(-${getSize(this.altitude)})`
   }
 }
+// Parametros del obstaculo dentro del lienzo
+class Foe {
+  constructor() {
+    this.height = 19
+    this.width = 9
+    this.left = 600
+    this.distance = 0
+
+    this.el = document.createElement('div')
+    this.el.style.position = 'absolute'
+    this.el.style.bottom = 0
+    this.el.style.left = getSize(this.left)
+    this.el.style.height = getSize(this.height)
+    this.el.style.width = getSize(this.width)
+    this.el.style.background = theme.PRIMARY
+  }
+
+  // distancia del obstaculo
+  move() {
+    this.distance++
+    setTimeout(this.move.bind(this), 5)
+  }
+
+  render() {
+    this.el.style.transform = `translateX(-${getSize(this.distance)})`
+  }
+}
+
+const SCORE_KEY = 'TREX_HIGHSCORE'
