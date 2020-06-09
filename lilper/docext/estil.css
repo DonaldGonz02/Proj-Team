@@ -24,6 +24,8 @@ p {
     padding: 0;
     margin: 0;
 }
+
+
 .img-circle {
     border: 1px solid white;
     border-radius: 80%;
@@ -36,23 +38,33 @@ p {
     border-radius: 10px;
 }
 #header {
-    background-image: url("https://www.sololearn.com/Uploads/header.jpg");
-    background-size: cover;
-    font-size: medium;
+    background-image: url("https://i.pinimg.com/564x/96/d4/92/96d4925149eb62c32ca0f6f37101bf11.jpg");
+    
+    
 }
 #header img {
     display: block;
-    width: 80px;
-    height: 80px;
+    width: 180px;
+    height: 150px;
     margin: auto;
 }
 #header p {
-    font-size: 25pt;
-    color: #3b464c;
+    font-size: 45pt;
+    color: #f0f3f5;
     padding-top: 5px;
     margin: 0;
     font-weight: bold;
     text-align: center;
+    font-family: Exotc350 Bd BT;
+    text-shadow:    1px 1px 1px #919191,
+                    1px 2px 1px #919191,
+                    1px 3px 1px #cea6a6,
+                    1px 4px 1px #fdfff25e,
+                    1px 10px 6px rgba(16, 16, 16, 0.4),
+                    1px 10px 10px rgba(16, 16, 16, 0.5),
+                    1px 15px 25px rgba(16, 16, 16, 0.5),
+                    1px 20px 40px rgba(16, 16, 16, 0.5);
+    
 }
 .quote {
     font-size: 12pt;
