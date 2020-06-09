@@ -1,45 +1,35 @@
 body {
-    background-color:  rgb(12, 4, 56);
-}
-
-.pantalla {
-    width: 600px;
-    margin: 0 auto;
-    background-color: rgb(12, 4, 56);
+    background-color:  rgb(0, 211, 200);
 }
 h1 {
     text-align: center;
-    color: rgb(47, 245, 228);
+    color: rgb(22, 26, 0);
 }
 #Playagain {
     width: 300px;
     height: 30px;
-    background-color: blue;
+    background-color: rgb(0, 158, 79);
 }
 
-#miCanvas {
-    border: groove 2px red;
-    background: black;
-    box-shadow: 10px 10px 10px #888888;
-}
 p {
-    color: rgb(47, 245, 228);
+    color: rgb(1, 37, 34);
 }
 
 #Volver {
     width: 300px;
     height: 30px;
+    background-color: rgb(0, 158, 79);
 }
 footer{
     width: 100%;
-    background: linear-gradient(rgba(17, 3, 26, 0.925), rgba(161, 132, 179, 0.5));
+    background: linear-gradient(rgba(17, 3, 26, 0.925), rgba(136, 255, 0, 0.5));
     color: white;
 }
 .container-footer-all{
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    padding: 40px;
+    padding: 10px;
 }
 .container-body{
     display: flex;
@@ -108,7 +98,7 @@ footer{
     margin: auto;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 10px;
 }
 .copyright{
     color: #c7c7c7;
