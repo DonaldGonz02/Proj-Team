@@ -1,11 +1,7 @@
-body {
-    background-color:  rgb(12, 4, 56);
-}
-
 .pantalla {
     width: 600px;
     margin: 0 auto;
-    background-color: rgb(12, 4, 56);
+    background: "imagenes/switch.jpg"
 }
 h1 {
     text-align: center;
@@ -23,7 +19,7 @@ h1 {
     box-shadow: 10px 10px 10px #888888;
 }
 p {
-    color: rgb(47, 245, 228);
+    color: white;
 }
 
 #Volver {
