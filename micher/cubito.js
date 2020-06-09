@@ -120,3 +120,57 @@ class Foe {
 }
 
 const SCORE_KEY = 'TREX_HIGHSCORE'
+// Marcador de puntos.
+class ScoreBoard {
+  constructor() {
+    this.puntaje = 0
+    this.maximopuntaje = localStorage.getItem(SCORE_KEY) || 0
+
+    this.el = document.createElement('div')
+    this.el.style.position = 'absolute'
+    this.el.style.top = getSize(2)
+    this.el.style.right = getSize(2)
+    this.el.style.color = theme.PRIMARY
+  }
+
+  countUp() {
+    this.puntaje++
+  }
+
+  save() {
+    if (this.puntaje > this.maximopuntaje) {
+      localStorage.setItem(SCORE_KEY, this.puntaje)
+    }
+  }
+
+  render() {
+    this.el.innerHTML = `Score: ${this.puntaje} | Hi: ${this.maximopuntaje}`
+  }
+}
+
+//Ancho y altura del lienzo
+class Stage {
+  constructor(el) {
+    this.height = 118
+    this.width = 306
+
+    this.el = document.createElement('div')
+    this.el.style.position = 'relative'
+    this.el.style.height = getSize(this.height)
+    this.el.style.width = getSize(this.width)
+    this.el.style.overflow = 'hidden'
+    this.el.style.background = theme.BACKGROUND
+    el.appendChild(this.el)
+  }
+
+  //El nodo que se quiere insertar
+  add(child) {
+    this.el.appendChild(child.el)
+  }
+}
+
+//El elemento a seleccionar
+class App {
+  constructor(selector) {
+    this.el = document.querySelector(selector)
+  }
