@@ -28,7 +28,7 @@ h1{
                     1px 7px 1px #919191,
                     1px 8px 1px #919191,
                     1px 9px 1px #919191,
-                    2px 2px 5px #75E8FF,
+                    2px 2px 5px rgb(254, 255, 255),
                     1px 10px 6px rgba(16, 16, 16, 0.4),
                     1px 10px 10px rgba(16, 16, 16, 0.5),
                     1px 15px 25px rgba(16, 16, 16, 0.5),
@@ -38,7 +38,8 @@ h1{
 }
 #pantalla{
     border: groove 10px rgba(129, 41, 34, 0.945);
-    background: linear-gradient(rgba(231, 87, 82, 0.925), rgba(216, 196, 16, 0.5));
+    background-image: url("https://i.pinimg.com/564x/78/ee/a0/78eea056789f7be0c9914daf2d29fc7f.jpg");
+    background-size: contain;
     box-shadow:5px 7px 10px ;  
     border-radius: 2px;
     padding-left: 0;

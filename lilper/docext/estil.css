@@ -5,19 +5,19 @@ html {
 body {
     font-family: 'Handlee', cursive;
     font-size: 13pt;
-    background-color: #efefef;
+    background-color: #0e0606;
     padding: 10px;
     margin: 0;
 }
 h1 {
     font-size: 15pt;
-    color: #20bcd5;
+    color: #020e0f;
     text-align: center;
     padding: 18px 0 18px 0;
     margin: 0 0 10px 0;
 }
 h1 span {
-    border: 4px dashed #20bcd5;
+    border: 4px dashed #080108;
     padding: 10px;
 }
 p {
@@ -31,6 +31,13 @@ p {
     border-radius: 80%;
     
 }
+#section1 {
+    background-color: rgb(233, 184, 129);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    
+}
 .section {
     background-color: #fff;
     padding: 15px;
@@ -38,8 +45,8 @@ p {
     border-radius: 10px;
 }
 #header {
-    background-image: url("https://i.pinimg.com/564x/96/d4/92/96d4925149eb62c32ca0f6f37101bf11.jpg");
-    
+    background-image: url("https://i.pinimg.com/564x/06/59/fa/0659fabeae1193d268c0cdd383c9850d.jpg");
+    background-size: contain;
     
 }
 #header img {
