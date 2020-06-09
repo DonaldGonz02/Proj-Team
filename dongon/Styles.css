@@ -37,7 +37,7 @@ nav >a:hover{
 
 header .textos-header{
     display: flex;
-    height:500px;
+    height:300px;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -47,12 +47,12 @@ header .textos-header{
 }
 
 .textos-header h1{
-    font-size: 150px;
+    font-size: 250px;
     color: #C0FDFF;
     padding: 0 0 0 0;
 }
 .textos-header h2{
-    font-size: 30px;
+    font-size: 70px;
     font-weight: 300;
     color: #E9FEFC;
     padding: 0 0 0 0;
@@ -237,16 +237,14 @@ footer{
     color: #FFFFFF;
     font-size: 25px;
     font-weight: 900;
-}
-.copyright a{
-    text-decoration: none;
-    color: #FFFFFF;
-    font-weight: bold;
+    padding: 0 0 0 20px;
 }
 .información a{
+    font-size: 25px;
     text-decoration: none;
     color: #FFFFFF;
     text-align: center;
     align-items: center;
     justify-content: center;    
+    padding: 0 20px 0 0;
 }

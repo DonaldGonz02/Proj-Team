@@ -10,8 +10,8 @@
 <body>
     <h1>Juego del Ahorcado</h1>
     <canvas id="pantalla" width="960px" height="450px" > <!-- etiqueta del canvas con sus medidas en la pantalla -->
-
   </canvas>
+  
   <!-- El boton que nos sirve para recargar la pagina y asi generar una nueva palabra y volver a jugar -->
   <button id="boton" type="reset" onclick="javascript:window.location.reload();">Volver a Jugar</button>
   <button id= "prin" type="button"><a href="file:///C:/laragon/www/Proj-Team/dongon/indexHP.html"> HOME</a></button>
@@ -71,7 +71,8 @@
       palabras_array.push("ALCOHOL");
       palabras_array.push("MASCARILLA");
       palabras_array.push("SEMILLA");
-      palabras_array.push("PAPEL");       
+      palabras_array.push("PAPEL");
+      palabras_array.push("ROSA");        
       //objetos a utilizar
       function Tecla(x, y, ancho, alto, letra){
           this.x = x;
@@ -218,8 +219,16 @@
                   break;
              case 'ALCOHOL':  
                   pista = "el que te deja tirado en las banquetas";
+                  break;
+             case 'GEL':  
+                  pista = "Textura viscosa";
                   break;  
-
+             case 'MOCHILA':  
+                  pista = "La llevas a la escuela";
+                  break; 
+             case 'ROSA':  
+                  pista = "Tiene espinasgit";
+                  break;   
               default: 
                   pista="No hay pista XD";
           }
@@ -372,6 +381,7 @@
               }
           }
       }
+        
   </script>
 <footer>
     <div class="container-footer-all">
@@ -388,12 +398,12 @@
                 <div class="row">
                     <img src="github.png">
                     <label>GitHub</label>
-                    <a href="https://github.com/LINETH-03">aquí</a>
+                    <a href="https://github.com/LINETH-03">LINETH-03</a>
                 </div>
                 <div class="row">
                     <img src="insta.png">
                     <label>Instagram</label>
-                    <a href="https://www.instagram.com/lineth_henandez/">aquí</a>
+                    <a href="https://www.instagram.com/lineth_henandez/">lineth_henandez</a>
                 </div>
             </div>
             <div class="colum3">
