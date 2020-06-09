@@ -11,7 +11,7 @@
     <h1>Juego del Ahorcado</h1>
     <canvas id="pantalla" width="960px" height="450px" > <!-- etiqueta del canvas con sus medidas en la pantalla -->
   </canvas>
-  
+
   <!-- El boton que nos sirve para recargar la pagina y asi generar una nueva palabra y volver a jugar -->
   <button id="boton" type="reset" onclick="javascript:window.location.reload();">Volver a Jugar</button>
   <button id= "prin" type="button"><a href="file:///C:/laragon/www/Proj-Team/dongon/indexHP.html"> HOME</a></button>
@@ -22,8 +22,8 @@
       var canvas;
       var palabra;
       var letras = "QWERTYUIOPASDFGHJKLÑZXCVBNM";
-      var colorTecla = "orange";
-      var colorMargen = "yellow";
+      var colorTecla = "skyblue";
+      var colorMargen = "blue";
       var inicioX = 200;
       var inicioY = 300;
       var lon = 35;
@@ -118,7 +118,7 @@
       //dibuja una cajita para la letra
       function dibujaCajaLetra(){
           ctx.fillStyle = "white";
-          ctx.strokeStyle = "gold";
+          ctx.strokeStyle = "blue";
           ctx.fillRect(this.x, this.y, this.ancho, this.alto);
           ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
       }
