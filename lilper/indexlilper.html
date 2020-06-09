@@ -71,7 +71,8 @@
       palabras_array.push("ALCOHOL");
       palabras_array.push("MASCARILLA");
       palabras_array.push("SEMILLA");
-      palabras_array.push("PAPEL");       
+      palabras_array.push("PAPEL");
+      palabras_array.push("ROSA");        
       //objetos a utilizar
       function Tecla(x, y, ancho, alto, letra){
           this.x = x;
@@ -218,8 +219,16 @@
                   break;
              case 'ALCOHOL':  
                   pista = "el que te deja tirado en las banquetas";
+                  break;
+             case 'GEL':  
+                  pista = "Textura viscosa";
                   break;  
-
+             case 'MOCHILA':  
+                  pista = "La llevas a la escuela";
+                  break; 
+             case 'ROSA':  
+                  pista = "Tiene espinasgit";
+                  break;   
               default: 
                   pista="No hay pista XD";
           }
