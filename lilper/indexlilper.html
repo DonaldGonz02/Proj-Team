@@ -23,8 +23,8 @@
       var canvas;
       var palabra;
       var letras = "QWERTYUIOPASDFGHJKLÑZXCVBNM";
-      var colorTecla = "skyblue";
-      var colorMargen = "blue";
+      var colorTecla = "#54180B";
+      var colorMargen = "yellow";
       var inicioX = 200;
       var inicioY = 300;
       var lon = 35;
@@ -103,7 +103,7 @@
           ctx.fillRect(this.x, this.y, this.ancho, this.alto);
           ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
           
-          ctx.fillStyle = "black";
+          ctx.fillStyle = "white";
           ctx.font = "bold 25px Exotc350 Bd BT";
           ctx.fillText(this.letra, this.x+this.ancho/2-5, this.y+this.alto/2+5);
       }
@@ -433,7 +433,7 @@
     <div class="container-footer">
         <div class="footer">
             <div class="copyright">
-                &copy; 2020 Todos los derechos reservados | <a href="">Lineth Hernández</a>
+                &copy; 2020 Todos los derechos reservados | <a href="https://github.com/LINETH-03">Lineth Hernández</a>
             </div>
             <div class="información">
                 <a href="">Documentación Externa</a> | 
