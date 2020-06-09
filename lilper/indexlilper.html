@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego del ahorcado</title>
+    
     <link rel="stylesheet" href="estilos.css">
     <link rel="shortcut icon" href="icono.png" type="image/x-icon">
 </head>
 <body>
     <h1>Juego del Ahorcado</h1>
-    <canvas id="pantalla" width="960px" height="450px" > <!-- etiqueta del canvas con sus medidas en la pantalla -->
+    <canvas id="pantalla" width="990px" height="480px" > <!-- etiqueta del canvas con sus medidas en la pantalla -->
   </canvas>
 
   <!-- El boton que nos sirve para recargar la pagina y asi generar una nueva palabra y volver a jugar -->
@@ -103,7 +104,7 @@
           ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
           
           ctx.fillStyle = "black";
-          ctx.font = "bold 20px Exotc350 Bd BT";
+          ctx.font = "bold 25px Exotc350 Bd BT";
           ctx.fillText(this.letra, this.x+this.ancho/2-5, this.y+this.alto/2+5);
       }
       
@@ -233,9 +234,9 @@
                   pista="No hay pista XD";
           }
           // Pintamos la palabra en el canvas
-          ctx.fillStyle = "white";  // Aqui ponemos el color de la letra
+          ctx.fillStyle = "black";  // Aqui ponemos el color de la letra
           ctx.font = "Bold 30px Exotc350 Bd BT";  // aqui ponemos el tipo y tamaño de la letra
-          ctx.fillText(pista, 10, 15);  // aqui ponemos la frase en nuestro caso la variable pista , seguido de la posx y posy
+          ctx.fillText(pista, 10, 22);  // aqui ponemos la frase en nuestro caso la variable pista , seguido de la posx y posy
       }
 
               
@@ -351,7 +352,7 @@
     //envia un mensaje si gana o pierde
       function gameOver(errores){
           ctx.clearRect(0, 0, canvas.width, canvas.height);
-          ctx.fillStyle = "white";
+          ctx.fillStyle = "black";
 
           ctx.font = "Bold 80px Exotc350 Bd BT";
           if (errores < 5){

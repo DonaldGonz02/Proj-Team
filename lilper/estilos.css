@@ -7,22 +7,20 @@
 
 body{
     
-    background: radial-gradient( rgba( 8 ,  6 ,  44 ,  0.925 ) ,  rgba( 41 ,  17 ,  173 ,  0.445 ));
+    background: radial-gradient( rgba(141, 93, 37, 0.925) ,  rgba(233, 93, 11, 0.445));
    
 }
 
 h1{
     text-align: center;
     color: rgb(65, 19, 5);
-    font-size: 3em;
+    font-size: 5em;
     text-transform: uppercase;
-    font-family: cooper black;
+    font-family: Cooper Black;
     font-weight: bold;
     color: rgb(243, 238, 233);
     text-shadow:    1px 1px 1px #919191,
                     1px 2px 1px #919191,
-                    1px 3px 1px #cea6a6,
-                    1px 4px 1px #fdfff25e,
                     1px 5px 1px #919191,
                     1px 6px 1px #919191,
                     1px 7px 1px #919191,
@@ -72,14 +70,14 @@ h1{
     
 }
 #boton:hover{ 
-    box-shadow:0 5px 50px 0 rgb(202, 124, 35) inset, 0 5px 50px 0 rgb(166, 121, 224) , 0 5px 50px 0 rgb(121, 167, 78) inset, 0 5px 50px 0 #45B0A7 ;
+    box-shadow:0 5px 50px 0 rgb(163, 108, 44) inset, 0 5px 50px 0 rgb(166, 121, 224) , 0 5px 50px 0 rgb(121, 167, 78) inset, 0 5px 50px 0 #45B0A7 ;
     
     text-shadow:0 5px 50px 0 rgb(167, 116, 214) ,0 5px 50px 0 rgb(190, 117, 98) ;
 }
 
 #prin{
-    background: linear-gradient(rgba(231, 87, 82, 0.925), rgba(216, 196, 16, 0.5));
-    border-radius: 2px;
+    background: linear-gradient(rgba(206, 97, 93, 0.925), rgba(216, 196, 16, 0.5));
+    border-radius: 5px;
     display: table;
     font-weight: bold;
     padding: 10px 20px;
@@ -98,7 +96,7 @@ h1{
 
 footer{
     width: 100%;
-    background: linear-gradient(rgba(17, 3, 26, 0.925), rgba(161, 132, 179, 0.5));
+    background: linear-gradient(rgba(104, 44, 10, 0.925), rgba(145, 60, 11, 0.5));
     color: white;
 }
 .container-footer-all{
@@ -167,7 +165,7 @@ footer{
 }
 .container-footer{
     width: 100%;
-    background-color: #0b0625ea;
+    background-color: #0a0501d8;
 }
 .footer{
     max-width: 100%;

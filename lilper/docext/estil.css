@@ -24,8 +24,18 @@ p {
     padding: 0;
     margin: 0;
 }
-
-
+P span{
+    background: #7e3207;
+    color: #fff;
+    border-radius: 40%;
+    display: inline-block;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    padding: 6px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    margin-right: 5px;
+}
 .img-circle {
     border: 1px solid white;
     border-radius: 80%;
