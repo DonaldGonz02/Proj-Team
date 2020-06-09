@@ -66,21 +66,26 @@ P span{
     margin: auto;
 }
 #header p {
-    font-size: 45pt;
+    font-size: 55pt;
     color: #f0f3f5;
     padding-top: 5px;
     margin: 0;
     font-weight: bold;
     text-align: center;
-    font-family: Exotc350 Bd BT;
+    font-family: DFPOP1-W9;
     text-shadow:    1px 1px 1px #919191,
                     1px 2px 1px #919191,
-                    1px 3px 1px #cea6a6,
-                    1px 4px 1px #fdfff25e,
+                    1px 5px 1px #919191,
+                    1px 6px 1px #919191,
+                    1px 7px 1px #919191,
+                    1px 8px 1px #919191,
+                    1px 9px 1px #919191,
+                    2px 2px 5px rgb(254, 255, 255),
                     1px 10px 6px rgba(16, 16, 16, 0.4),
                     1px 10px 10px rgba(16, 16, 16, 0.5),
                     1px 15px 25px rgba(16, 16, 16, 0.5),
                     1px 20px 40px rgba(16, 16, 16, 0.5);
+    
     
 }
 .quote {
