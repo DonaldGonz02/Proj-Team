@@ -24,8 +24,18 @@ p {
     padding: 0;
     margin: 0;
 }
-
-
+P span{
+    background: #7e3207;
+    color: #fff;
+    border-radius: 40%;
+    display: inline-block;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    padding: 6px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    margin-right: 5px;
+}
 .img-circle {
     border: 1px solid white;
     border-radius: 80%;
@@ -56,21 +66,26 @@ p {
     margin: auto;
 }
 #header p {
-    font-size: 45pt;
+    font-size: 55pt;
     color: #f0f3f5;
     padding-top: 5px;
     margin: 0;
     font-weight: bold;
     text-align: center;
-    font-family: Exotc350 Bd BT;
+    font-family: DFPOP1-W9;
     text-shadow:    1px 1px 1px #919191,
                     1px 2px 1px #919191,
-                    1px 3px 1px #cea6a6,
-                    1px 4px 1px #fdfff25e,
+                    1px 5px 1px #919191,
+                    1px 6px 1px #919191,
+                    1px 7px 1px #919191,
+                    1px 8px 1px #919191,
+                    1px 9px 1px #919191,
+                    2px 2px 5px rgb(254, 255, 255),
                     1px 10px 6px rgba(16, 16, 16, 0.4),
                     1px 10px 10px rgba(16, 16, 16, 0.5),
                     1px 15px 25px rgba(16, 16, 16, 0.5),
                     1px 20px 40px rgba(16, 16, 16, 0.5);
+    
     
 }
 .quote {
@@ -88,7 +103,7 @@ table, th, td {
     table-layout: fixed;
 }
 .selected {
-    background-color: #f36f48;
+    background-color: #170750;
     font-weight: bold;
     color: white;
 }
@@ -154,16 +169,27 @@ input, textarea {
     width: 70%;
     outline: none;
 }
-.face {
-    transform: scale(0.4);
-    margin: 0 auto;
-    display: block;
-    margin-top: -35px;
-    margin-bottom: -25px;
+#cod {
+    text-align: center;
+}
+#cod img {
+    height: 250px;
+    width: 350px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#cod a {
+    text-decoration: none;
+}
+#cod img:hover {
+    opacity: 0.8;
+}
+#contacts {
+    text-align: center;
 }
 #contacts img {
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
     margin-left: 7px;
     margin-right: 7px;
 }
@@ -177,7 +203,7 @@ input, textarea {
     text-align: center;
 }
 .copyright {
-    font-size: 8pt;
+    font-size: 10pt;
     text-align: right;
     padding-bottom: 10px;
     color: grey;
