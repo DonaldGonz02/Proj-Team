@@ -50,7 +50,7 @@ P span{
 
     
 .section {
-    background-color: rgb(233, 184, 129);
+    background-color:  rgb(233, 184, 129);
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -65,7 +65,7 @@ P span{
 }
 #header {
     background-image: url("https://i.pinimg.com/564x/65/65/e0/6565e02383dcd3a15a3a963e49f001b7.jpg");
-    background-size: contain;
+    background-size: auto;
     
 }
 #header img {
