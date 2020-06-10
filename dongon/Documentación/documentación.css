@@ -19,7 +19,6 @@ body{
     background: #9CECFB;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, rgba(0, 81, 212, 0.6), rgba(101, 198, 247, 0.6), rgba(156, 237, 251, 0.6)), url(fondo.jpg);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top,  rgba(0, 81, 212, 0.6), rgba(101, 198, 247, 0.6), rgba(156, 237, 251, 0.6)), url(fondo.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
      background-size: cover;
      background-attachment: fixed;
      position: relative;
@@ -43,8 +42,9 @@ li a, .dropbtn{
     display: inline-block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 10px 10px;
     text-decoration: none;
+    font-size: 25px;
     font-weight: 900;
 }
 
@@ -91,17 +91,18 @@ li.dropdown{
 
 header .textos-header{
     display: flex;
-    height: 400px;
+    height: 500px;
     width: 100%;
     /*align-items: left;
     justify-content: center;
     /*para separar los textos del header:*/
     flex-direction: column;
     text-align: right;
+    padding: 15px 50px 0 0;
 }
 
 .textos-header h1{
-    font-size: 100px;
+    font-size: 125px;
     color: white;
 }
 
