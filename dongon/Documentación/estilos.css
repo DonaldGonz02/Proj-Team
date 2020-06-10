@@ -1,0 +1,234 @@
+/*estilos generales*/
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'open sans'; 
+}
+
+/*Header*/ 
+ header{
+     width: 100%;
+     height: 600px;
+     /*degradado sobre el wallpaper*/
+     background: #0f0c29;  /* fallback for old browsers */
+     background: -webkit-linear-gradient(to right, hsla(240, 28%, 19%, 0.61), #302b63b6, #0f0c29b7), url(../HomePage!/wallpaper.jpg);;  /* Chrome 10-25, Safari 5.1-6 */
+     background: linear-gradient(to right, hsla(240, 28%, 19%, 0.61), #302b63b6, #0f0c29b7),/*imagen para el wallpaper*/ url(../HomePage!/wallpaper.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     background-size: cover;
+     background-attachment: fixed;
+     position: relative;
+ }
+
+ nav{
+     text-align: right;
+     padding: 30px 50px 0 0;
+ }
+
+ nav > a{
+     color: white;
+     font-weight: 300;
+     /*quita el subrayado*/
+     text-decoration: none;
+     /*separa una opcion de la otra en el menu superior*/
+     margin-right: 10px;
+ }
+
+ nav > a:hover{
+    text-decoration: underline ;
+}
+/*efecto tipon Swipe*/
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+header .textos-header{
+    display: flex;
+    height: 450px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /*para separar los textos del header:*/
+    flex-direction: column;
+    text-align: center;
+}
+
+.textos-header h1{
+    font-size: 100px;
+    color: white;
+}
+
+.textos-header h2{
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+    padding: 0 0 0 0;
+}
+/*juegos*/
+
+.panel{
+    background: #f2f2f2;
+    padding: 0 0 60px 0 ;
+}
+.contenedor> a{
+    padding: 60 px 0 ;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    /*evitar que se salgan los elementos del margen o esconderlos*/
+    overflow: hidden;
+}   
+
+.titulo{
+    color: #002CC7 ;
+    font-size: 30px ;
+    text-align: center;
+    margin-bottom: 50px ;
+}
+
+.galeria {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.img-portafolio{
+    width: 23%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow:0 0 6px rgba(0, 0, 0, .5);
+}
+
+.img-portafolio > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.img-portafolio >a{
+    text-decoration: none;
+}
+.hover-galeria{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background: hsla(240, 75%, 22%, 0.7);
+    transition: transform .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hover-galeria img{
+    width: 50px;
+}
+
+.hover-galeria p{
+    color: white;
+}
+
+.img-portafolio:hover .hover-galeria{
+   transform: scale(1);
+}
+
+/*footer o parteinferior de la página */
+footer{
+    width: 100%;
+    background-color: #202020;
+    color: white;
+}
+.container-footer-all{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+}
+.container-body{
+    display: flex;
+    justify-content: space-between;
+}
+.colum1{
+    max-width: 400px;
+}
+.colum1 h3{
+    font-size: 22px;
+}
+.colum1 p{
+    font-size: 14px;
+    color: #c7c7c7;
+    margin-top: 20px;
+}
+.colum2{
+    max-width: 400px;
+}
+.colum2 h3{
+    font-size: 22px;
+}
+.row{
+    margin-top: 20px;
+    display: flex;
+}
+.row img{
+    width: 36px;
+    height: 36px;
+}
+.row label{
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #c7c7c7;
+}
+.row a{
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #c7c7c7;
+}
+.colum3{
+    max-width: 400px;
+}
+.colum3 h3{
+    font-size: 22px;
+}
+.row2{
+    margin-top: 20px;
+    display: flex;
+}
+.row2 img{
+    width: 36px;
+    height: 36px;
+}
+.row2 label{
+    margin-top: 10px;
+    margin-left: 20px;
+    max-width: 150px;
+}
+.container-footer{
+    width: 100%;
+    background-color: #101010;
+}
+.footer{
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.copyright{
+    color: #c7c7c7;
+}
+.copyright a{
+    text-decoration: none;
+    color: #c7c7c7;
+    font-weight: bold;
+}
+.información a{
+    text-decoration: none;
+    color: #c7c7c7;
+}
