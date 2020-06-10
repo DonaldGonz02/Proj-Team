@@ -5,7 +5,8 @@ html {
 body {
     font-family: 'Handlee', cursive;
     font-size: 13pt;
-    background-color: #0e0606;
+    background-image: url("https://i.pinimg.com/564x/b6/c4/f7/b6c4f7bcb9be5ae4978ed05fc9024437.jpg");
+    background-size: auto;
     padding: 10px;
     margin: 0;
 }
@@ -41,7 +42,7 @@ P span{
     border-radius: 80%;
 }
 #section1 {
-    background-color: rgb(233, 184, 129);
+    background-color: rgba(255, 186, 130, 0.801);
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -50,7 +51,7 @@ P span{
 
     
 .section {
-    background-color:  rgb(233, 184, 129);
+    background-color:  rgba(255, 186, 130, 0.801);
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -212,8 +213,8 @@ input, textarea {
     text-align: center;
 }
 .copyright {
-    font-size: 10pt;
+    font-size: 14pt;
     text-align: right;
     padding-bottom: 10px;
-    color: grey;
+    color: rgb(255, 255, 255);
 }
