@@ -169,16 +169,10 @@ input, textarea {
     width: 70%;
     outline: none;
 }
-.face {
-    transform: scale(0.4);
-    margin: 0 auto;
-    display: block;
-    margin-top: -35px;
-    margin-bottom: -25px;
-}
+
 #contacts img {
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
     margin-left: 7px;
     margin-right: 7px;
 }
@@ -192,7 +186,7 @@ input, textarea {
     text-align: center;
 }
 .copyright {
-    font-size: 8pt;
+    font-size: 10pt;
     text-align: right;
     padding-bottom: 10px;
     color: grey;
