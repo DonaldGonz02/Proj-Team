@@ -10,22 +10,196 @@
         #pantalla{
             border: groove 10px rgb(17, 21, 77);
             background: rgb(119, 207, 236);
+            font-family: 'Handlee', cursive;
+        }
+        #Titulo{
+            font-size: 25pt;
+            padding-top: 5px;
+            margin: 0;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: cooper black;
+            color: rgb(243, 238, 233);
+            text-shadow:    1px 1px 1px #919191,
+                            1px 2px 1px #919191,
+                            1px 3px 1px #cea6a6,
+                            1px 4px 1px #d9dad45e,
+                            1px 5px 1px #919191,
+                            1px 6px 1px #919191,
+                            1px 7px 1px #919191,
+                            1px 8px 1px #919191,
+                            1px 9px 1px #919191,
+                            
+                            1px 10px 6px rgba(16, 16, 16, 0.4),
+                            1px 10px 10px rgba(16, 16, 16, 0.5),
+                            1px 15px 25px rgba(16, 16, 16, 0.5),
+                            1px 20px 40px rgba(16, 16, 16, 0.5);
+        }
+        footer{
+            width: 100%;
+            background-color: #202020;
+            color: white;
+        }
+        .container-footer-all{
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px;
+        }
+        .container-body{
+            display: flex;
+            justify-content: space-between;
+        }
+        .colum1{
+            max-width: 400px;
+        }
+        .colum1 h3{
+            font-size: 22px;
+        }
+        .colum1 p{
+            font-size: 14px;
+            color: #c7c7c7;
+            margin-top: 20px;
+        }
+        .colum2{
+            max-width: 400px;
+        }
+        .colum2 h3{
+            font-size: 22px;
+        }
+        .row{
+            margin-top: 20px;
+            display: flex;
+        }
+        .row img{
+            width: 36px;
+            height: 36px;
+        }
+        .row label{
+            margin-top: 10px;
+            margin-left: 10px;
+            color: #c7c7c7;
+        }
+        .row a{
+            margin-top: 10px;
+            margin-left: 10px;
+            color: #c7c7c7;
+        }
+        .colum3{
+            max-width: 400px;
+        }
+        .colum3 h3{
+            font-size: 22px;
+        }
+        .row2{
+            margin-top: 20px;
+            display: flex;
+        }
+        .row2 img{
+            width: 36px;
+            height: 36px;
+        }
+        .row2 label{
+            margin-top: 10px;
+            margin-left: 20px;
+            max-width: 150px;
+        }
+        .container-footer{
+            width: 100%;
+            background-color: #101010;
+        }
+        .footer{
+            max-width: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .copyright{
+            color: #c7c7c7;
+        }
+        .copyright a{
+            text-decoration: none;
+            color: #c7c7c7;
+            font-weight: bold;
+        }
+        .información a{
+            text-decoration: none;
+            color: #c7c7c7;
         }
     </style>
 
 </head>
-<body>
-    <h1 id="pantalla" width="960px" height="500px">
-        <center>
-            <h2>Intrucciones</h2>
-            <p>Bienvenido, jugarás el juego del gato, más conocido como totito:</p>
-            <p>- Jugarás contra la computadora...</p>
-            <p>- Debes formar una linea recta de tres casillas marcadas sin interrupciones.</p>
-            <p>- Presiona la casilla que deseas marcar y espera que la computadora responda.</p>
-            <p>- Intenta ganar...</p>
-            <p>Presiona "Play" para comenzar.</p>
-        </center>
+<body background="cats.jpg">
+    <center>
+        <h2 id="Titulo" >Instrucciones</h2>
+    </center>
+    <h1 id="pantalla">
+        <center><p>Bienvenido, jugarás el juego del gato, más conocido como totito:</p></center>
+            <p>&nbsp;&nbsp;- Jugarás contra la computadora...</p>
+            <p>&nbsp;&nbsp;- Debes formar una linea recta de tres casillas marcadas sin interrupciones.</p>
+            <p>&nbsp;&nbsp;- Presiona la casilla que deseas marcar y espera que la computadora responda.</p>
+            <p>&nbsp;&nbsp;- Intenta ganar...</p>
+            <center><p>Presiona "Play" para comenzar.</p></center>
         <center><a href="file:///C:/laragon/www/Proj-Team/brajac/juegodelgato/index.html"><img src="file:///C:/laragon/www/Proj-Team/brajac/corre.jpg"></a></center>
     </h1>
+    <footer>
+        <div class="container-footer-all">
+            <div class="container-body">
+                <div class="colum1">
+    
+                    <h3>Más información</h3>
+                    <p>Fue creado como proyecto final del curso Introducción a los sistemas de cómputo, éste proyecto fue trabajado por 5 contribuidores, cada uno elaborando un juego distinto. El juego del gato fue elaborado por Bradley Jacinto</p>
+
+                </div>
+                <div class="colum2">
+    
+                    <h3>Redes Sociales</h3>
+                    <div class="row">
+                        <img src="github.png">
+                        <label>GitHub</label>
+                        <a href="https://github.com/Bradleyivme">Bradleyivme</a>
+                    </div>
+                    <div class="row">
+                        <img src="insta.png">
+                        <label>Instagram</label>
+                        <a href="https://www.instagram.com/bradley_ivme/">@bradley_ivme</a>
+                    </div>
+                </div>
+                <div class="colum3">
+
+                    <h3>Información para contactarme</h3>
+                    <div class="row2">
+
+                        <img src="house.png">
+                        <label>Jalapa, Guatemala, Bradley Jacinto</label>
+
+                    </div>
+                    <div class="row2">
+
+                        <img src="teléfono.png">
+                        <label>+502 41397947</label>
+                        
+                    </div>
+                    <div class="row2">
+                        <img src="correo.png">
+                        <label>bradleyivme@gmail.com</label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container-footer">
+            <div class="footer">
+                <div class="copyright">
+                    &COPY; 2020 Todos los derechos reservados | <a href="https://github.com/Bradleyivme">Bradleyivme</a>
+                </div>
+                <div class="información">
+                    | <a href="file:///C:/laragon/www/Proj-Team/dongon/Documentaci%C3%B3n/Documentacion.html">Documentación Externa del Proyecto</a> | <a href="file:///C:/laragon/www/Proj-Team/dongon/indexHP.html">Menu principal</a> |
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
