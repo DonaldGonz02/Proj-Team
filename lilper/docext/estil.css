@@ -1,0 +1,210 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Handlee', cursive;
+    font-size: 13pt;
+    background-color: #0e0606;
+    padding: 10px;
+    margin: 0;
+}
+h1 {
+    font-size: 15pt;
+    color: #020e0f;
+    text-align: center;
+    padding: 18px 0 18px 0;
+    margin: 0 0 10px 0;
+}
+h1 span {
+    border: 4px dashed #080108;
+    padding: 10px;
+}
+p {
+    padding: 0;
+    margin: 0;
+}
+P span{
+    background: #7e3207;
+    color: #fff;
+    border-radius: 40%;
+    display: inline-block;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    padding: 6px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    margin-right: 5px;
+}
+.img-circle {
+    border: 1px solid white;
+    border-radius: 80%;
+    
+}
+#section1 {
+    background-color: rgb(233, 184, 129);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    
+}
+.section {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+#header {
+    background-image: url("https://i.pinimg.com/564x/06/59/fa/0659fabeae1193d268c0cdd383c9850d.jpg");
+    background-size: contain;
+    
+}
+#header img {
+    display: block;
+    width: 180px;
+    height: 150px;
+    margin: auto;
+}
+#header p {
+    font-size: 55pt;
+    color: #f0f3f5;
+    padding-top: 5px;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+    font-family: DFPOP1-W9;
+    text-shadow:    1px 1px 1px #919191,
+                    1px 2px 1px #919191,
+                    1px 5px 1px #919191,
+                    1px 6px 1px #919191,
+                    1px 7px 1px #919191,
+                    1px 8px 1px #919191,
+                    1px 9px 1px #919191,
+                    2px 2px 5px rgb(254, 255, 255),
+                    1px 10px 6px rgba(16, 16, 16, 0.4),
+                    1px 10px 10px rgba(16, 16, 16, 0.5),
+                    1px 15px 25px rgba(16, 16, 16, 0.5),
+                    1px 20px 40px rgba(16, 16, 16, 0.5);
+    
+    
+}
+.quote {
+    font-size: 12pt;
+    text-align: right;
+    margin-top: 10px;
+}
+table {
+    width: 100%;
+}
+table, th, td {
+    border: 2px solid #cecece;
+    border-collapse: collapse;
+    text-align: center;
+    table-layout: fixed;
+}
+.selected {
+    background-color: #170750;
+    font-weight: bold;
+    color: white;
+}
+li {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+progress {
+    width: 70%;
+    height: 20px;
+    color: #3fb6b2;
+    background: #efefef;
+}
+progress::-webkit-progress-bar {
+    background: #efefef;
+}
+progress::-webkit-progress-value {
+    background: #3fb6b2;
+} 
+progress::-moz-progress-bar {
+    color: #3fb6b2;
+    background: #efefef;
+}
+iframe, audio {
+    display: block;
+    margin: 0 auto;
+    border: 3px solid #3fb6b2;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background: #f36f48;
+}
+form {
+    text-align: center;
+    margin-top: 0;
+}
+.submit {
+    background-color: #3fb6b2;
+    padding: 12px 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    margin: 0;
+    font-weight: bold;
+}
+.submit:hover {
+    background-color: #43a09d;
+}
+textarea {
+    height: 100px;
+}
+input, textarea {
+    margin-bottom: 10px;
+    font-size: 11pt;
+    padding: 15px 10px 10px;
+    border: 1px solid #cecece;
+    background-color: #efefef;
+    color: #787575;
+    border-radius: 5px;
+    width: 70%;
+    outline: none;
+}
+#cod {
+    text-align: center;
+}
+#cod img {
+    height: 250px;
+    width: 350px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#cod a {
+    text-decoration: none;
+}
+#cod img:hover {
+    opacity: 0.8;
+}
+#contacts {
+    text-align: center;
+}
+#contacts img {
+    height: 80px;
+    width: 80px;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+#contacts a {
+    text-decoration: none;
+}
+#contacts img:hover {
+    opacity: 0.8;
+}
+#contacts {
+    text-align: center;
+}
+.copyright {
+    font-size: 10pt;
+    text-align: right;
+    padding-bottom: 10px;
+    color: grey;
+}
