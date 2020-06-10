@@ -169,7 +169,24 @@ input, textarea {
     width: 70%;
     outline: none;
 }
-
+#cod {
+    text-align: center;
+}
+#cod img {
+    height: 250px;
+    width: 350px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#cod a {
+    text-decoration: none;
+}
+#cod img:hover {
+    opacity: 0.8;
+}
+#contacts {
+    text-align: center;
+}
 #contacts img {
     height: 80px;
     width: 80px;
