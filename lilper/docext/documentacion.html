@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación externa</title>
+    <link rel="stylesheet" href="estil.css">
+</head>
+<body>
+    <div id="header" class="section">
+        <img alt="" class="img-circle"  src="juegoahorcado.jpg" >
+        <p class="titu">JUEGO DEL AHORCADO</p>
+        
+    </div>
+    <!-- seccion para el manual de usuario -->
+    <div id="section1">
+        <h1><span>Manual de usuario</span></h1>
+        <p> <span>1</span>	Ingresa al juego a través de la <i>página principal</i>  de <strong>Old Games</strong>, dando clic en el icono del Juego del ahorcado.   </p>
+        <br>
+        <p> <span>2</span>	Se mostrará el juego.</p> <br>
+        <p><span>3</span>	En la parte superior derecha podrás ver las pistas para adivinar la palabra. </p> <br>
+        <p> <span>4</span>	Para empezar a jugar debes dar clic con la flecha del mouse a cada letra.  </p> <br>
+        <p><span>5</span>	Cada vez que aciertes una letra la podrás observar en las cajitas blancas que están arriba del teclado.</p> <br>
+        <p> <span>6</span>	Por cada error que cometas irá apareciendo como se va ahorcando el muñequito solo puedes cometer 4 errores.</p> <br>
+        <p><span>7</span>	Cuando hayas completado la palabra satisfactoriamente se mostrará un mensaje de que has ganado o en caso contrario de que has perdido y te dirá cuál era la respuesta correcta.</p> <br>
+        <p><span>8</span>	Si quieres volver a jugar solo debes dar clic en el botón de <strong>Volver a Jugar</strong>.</p> <br>
+        <p> <span>9</span>	Si quieres volver al menú principal dale clic en el botón <strong>HOME</strong>.</p><br>
+        <br>
+        <p class="quote">En la parte inferior podrás ver información del perfil del Autor del juego</p>
+    </div>
+    <!--  seccion para la image del juego-->
+    <div class="section">
+        
+       <center> <img alt="" src="ahorcado.jpg"></center>
+        
+    </div>
+    <!-- About Me section start -->
+    <div class="section">
+        <h1><span>Descripción del problema</span></h1>
+        <p>
+            Se elabora un software para un juego de ahorcado, donde los usuarios pueden adivinar las palabras utilizando pistas, sí acierta se le mostrará un mensaje de que ha logrado completar satisfactoriamente la misión. Cada error le restará puntos y al término de cinco errores perderá el juego el cual puede volver a iniciar dando clic en un botón. Para el efecto se utiliza la web para contener el software, haciendo uso de<strong> Html, JavaScript</strong> para el funcionamiento y <strong>CSS</strong> para dar una vista atractiva al usuario. 
+        </p>
+        <p class="quote"></p>
+    </div>
+    <div class ="section">
+        <h1><span>Nombre del autor</span></h1>
+        <p>
+             <strong><i>Lily Lineth Pérez Hernández</i> </strong> 
+             <br> Estudiante de Ingeniería en Sistemas 
+        </p>
+        <p class="quote"></p>
+
+    </div>
+    
+    <div class="section">
+        <h1><span>Algoritmo</span></h1>
+        <center> <img alt="" src="algoritmoahorcado.png"></center>
+         
+     </div>
+    
+   <!--DICCIONARIO DE DATOS -->
+    <div class="section">
+        <h1><span>Diccionario de Datos</span></h1>
+        <table>
+            <tr>
+                <th  class="selected" >NOMBRE</th>
+                <th class="selected">CAMPO</th>
+                <th class="selected">DESCRIPCIÓN</th>
+                
+            </tr>
+            <tr>
+                <td>Letras (QWERTYUIOPASDFÑLKJH...)</td>
+                <td>Var=letras</td>
+                <td>Contiene el abecedario almacenado para poder mostrarlas</td>
+                
+                
+            </tr>
+            <tr>
+                <td>Teclado </td>
+                <td>Function=teclado</td>
+                <td>Distribuye el teclado que el usuario usara para seleccionar las letras </td>
+                  
+            </tr>
+            <tr>
+                <td>Seleccionar letras</td>
+                <td>Function=selecciona</td>
+                <td>Detecta la tecla y compara con la palabra elegida al azar</td>
+                 
+            </tr>
+            <tr>
+                <td>Pistas</td>
+                <td>Switch</td>
+                <td>Controla las pistas según la palabra</td>
+                
+            </tr>
+            <tr>
+                <td>Juega otra vez </td>
+                <td>Button (type reset)</td>
+                <td>Ejecuta la función de reiniciar el juega para volver a empezar </td>
+            </tr>
+            <tr>
+                <td>Fin del Juego</td>
+                <td>Function Gameover (errores)</td>
+                <td>Envía un mensaje si gana o pierde </td>
+            </tr>
+            <tr>
+                <td>Home</td>
+                <td>Button (type= button)</td>
+                <td>Contiene el enlace para volver a la página principal </td>
+            </tr>
+            <tr>
+                <td>Redes sociales  </td>
+                <td>Footer div (col 1)</td>
+                <td>Acceso directo a Instagram y Github</td>
+            </tr>
+            <tr>
+                <td>información de contacto</td>
+                <td>Footer div( col 3)</td>
+                <td>Lectura del usuario e información para contactar al autor</td>
+            </tr>
+            <tr>
+                <td>Derechos reservados</td>
+                <td>Footer div (copyright)</td>
+                <td>Envía  al perfil github del creador de la página   </td>
+            </tr>
+            <tr>
+                <td>Documentación externa del proyecto</td>
+                <td>Footer div(información) </td>
+                <td>Acceso directo hacia la documentación externa de todo el proyecto</td>
+            </tr>        
+        </table>
+    </div>
+
+
+
+    <div class="section" id="cod">
+        <h1><span>Código Fuente</span></h1>
+        <br>
+        <div>
+            <a href="CODIGO FUENTE.pdf">
+              <img alt="Código" src="https://i.pinimg.com/564x/58/af/06/58af060b7b7f28052449fe51751dfa59.jpg" /> 
+              </a>
+               
+             <p class="quote">clic en la imagen para abrir el Código Fuente</p>
+            
+        </div>
+    </div>
+    <!-- descripcion paso a paso -->
+    <div id="section1">
+        <h1><span>Descripción paso a paso</span></h1>
+        <p> <span>1</span>Se ingresa al juego desde la página principal, con el que se utilizó un href para el hipervínculo de los archivos Html. </p>
+        <br>
+        <p> <span>2</span>	Se mostrarán las pistas en la esquina superior izquierda del canvas (lienzo) del juego. Para las cuales se hace uso de un Switch para controlar las pistas de las palabras.	 </p> <br>
+        <p><span>3</span>Se hace uso de un Function= teclado para distribuir el abecedario en el Canvas. </p> <br>
+        <p> <span>4</span> Para seleccionar las letras se hace el uso de un Function=seleccionar que permitirá reconocer o detectar las palabras elegidas al azar. </p> <br>
+        <p><span>5</span>	Mostrará la letra en una cajita si acierta sino mostrara la imagen del ahorcado que ira sumando según los errores que cometa máximo 5 que utiliza un Function=GameOver y un Function= Horca.</p> <br>
+        <p> <span>6</span>Se utiliza un button type=reset para reiniciar el juego y volver a jugar.</p> <br>
+        <p><span>7</span>Se utiliza un button type=button para regresar al Home .</p> <br>
+        <p><span>8</span>Y un footer para los datos que contiene información del Creador de la página .</p> <br>
+        
+        <br>
+        <p class="quote"></p>
+    </div>
+    
+    <!-- My Skills section start -->
+    <div class="section">
+        <h1><span>Usos del código</span></h1>
+        <ul>
+            <li>HTML <br />
+                <progress min="0" max="100" value="69"></progress>
+            </li>
+            <li>JavaScript <br />
+                <progress min="0" max="100" value="19"></progress>
+            </li>
+            <li>CSS <br />
+                <progress min="0" max="100" value="11"></progress>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="section" id="contacts">
+       
+        <div>
+            <a href="file:///C:/laragon/www/Proj-Team/dongon/Documentación/Documentacion.html">
+                <img alt="Home" src="https://images.vexels.com/media/users/3/157257/isolated/preview/d3bd73477873ff05a127e686ee688f65-icono-de-la-casa-en-blanco-y-negro-by-vexels.png" />
+            </a>
+            <a href="https://www.instagram.com/lineth_henandez/" target="_blank">
+                <img alt="Instagram" src="https://images.vexels.com/media/users/3/137380/isolated/preview/1b2ca367caa7eff8b45c09ec09b44c16-icono-de-instagram-logo-by-vexels.png" />
+            </a>
+            <a href="https://github.com/LINETH-03">
+                <img alt="Github" src="https://image.flaticon.com/icons/png/512/536/536452.png"/>
+            </a>
+            
+        </div>
+    </div>
+    <!-- Contacts section end -->
+    
+    <div class="copyright">
+        &copy; 2020 Lineth Hernández. 
+    </div> 
+</body>
+</html>

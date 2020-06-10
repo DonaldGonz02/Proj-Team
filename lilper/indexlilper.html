@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego del ahorcado</title>
+    
     <link rel="stylesheet" href="estilos.css">
     <link rel="shortcut icon" href="icono.png" type="image/x-icon">
 </head>
 <body>
     <h1>Juego del Ahorcado</h1>
-    <canvas id="pantalla" width="960px" height="450px" > <!-- etiqueta del canvas con sus medidas en la pantalla -->
+    <canvas id="pantalla" width="990px" height="480px" > <!-- etiqueta del canvas con sus medidas en la pantalla -->
   </canvas>
-  
+
   <!-- El boton que nos sirve para recargar la pagina y asi generar una nueva palabra y volver a jugar -->
   <button id="boton" type="reset" onclick="javascript:window.location.reload();">Volver a Jugar</button>
   <button id= "prin" type="button"><a href="file:///C:/laragon/www/Proj-Team/dongon/indexHP.html"> HOME</a></button>
@@ -22,7 +23,7 @@
       var canvas;
       var palabra;
       var letras = "QWERTYUIOPASDFGHJKLÑZXCVBNM";
-      var colorTecla = "orange";
+      var colorTecla = "#54180B";
       var colorMargen = "yellow";
       var inicioX = 200;
       var inicioY = 300;
@@ -102,8 +103,8 @@
           ctx.fillRect(this.x, this.y, this.ancho, this.alto);
           ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
           
-          ctx.fillStyle = "black";
-          ctx.font = "bold 20px courier";
+          ctx.fillStyle = "white";
+          ctx.font = "bold 25px Exotc350 Bd BT";
           ctx.fillText(this.letra, this.x+this.ancho/2-5, this.y+this.alto/2+5);
       }
       
@@ -112,13 +113,13 @@
           var w = this.ancho;
           var h = this.alto;
           ctx.fillStyle = "black";
-          ctx.font = "bold 40px Courier";
+          ctx.font = "bold 40px Exotc350 Bd BT";
           ctx.fillText(this.letra, this.x+w/2-12, this.y+h/2+14);
       }
       //dibuja una cajita para la letra
       function dibujaCajaLetra(){
           ctx.fillStyle = "white";
-          ctx.strokeStyle = "gold";
+          ctx.strokeStyle = "blue";
           ctx.fillRect(this.x, this.y, this.ancho, this.alto);
           ctx.strokeRect(this.x, this.y, this.ancho, this.alto);
       }
@@ -234,8 +235,8 @@
           }
           // Pintamos la palabra en el canvas
           ctx.fillStyle = "black";  // Aqui ponemos el color de la letra
-          ctx.font = "bold 20px Courier";  // aqui ponemos el tipo y tamaño de la letra
-          ctx.fillText(pista, 10, 15);  // aqui ponemos la frase en nuestro caso la variable pista , seguido de la posx y posy
+          ctx.font = "Bold 30px Exotc350 Bd BT";  // aqui ponemos el tipo y tamaño de la letra
+          ctx.fillText(pista, 10, 22);  // aqui ponemos la frase en nuestro caso la variable pista , seguido de la posx y posy
       }
 
               
@@ -353,14 +354,14 @@
           ctx.clearRect(0, 0, canvas.width, canvas.height);
           ctx.fillStyle = "black";
 
-          ctx.font = "bold 50px Courier";
+          ctx.font = "Bold 80px Exotc350 Bd BT";
           if (errores < 5){
               ctx.fillText("Sí crack, la palabra es: ", 110, 280);
           } else {
               ctx.fillText("SUPER F, la palabra era: ", 110, 280);
           }
           
-          ctx.font = "bold 80px Courier";
+          ctx.font = "bold 80px Exotc350 Bd BT";
           lon = (canvas.width - (palabra.length*48))/2;
           ctx.fillText(palabra, lon, 380);
           horca(errores);
@@ -432,10 +433,10 @@
     <div class="container-footer">
         <div class="footer">
             <div class="copyright">
-                &copy; 2020 Todos los derechos reservados | <a href="">Lineth Hernández</a>
+                &copy; 2020 Todos los derechos reservados | <a href="https://github.com/LINETH-03">Lineth Hernández</a>
             </div>
             <div class="información">
-                <a href="">Información de proyecto</a> | <a href="">Privacidad y Política</a> | <a href="">Términos y Condiciones</a>
+                <a href="">Documentación Externa</a> | 
             </div>
         </div>
     </div>
