@@ -103,7 +103,7 @@ table, th, td {
     table-layout: fixed;
 }
 .selected {
-    background-color: #f36f48;
+    background-color: #170750;
     font-weight: bold;
     color: white;
 }
