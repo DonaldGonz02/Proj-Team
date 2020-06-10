@@ -39,7 +39,6 @@ P span{
 .img-circle {
     border: 1px solid white;
     border-radius: 80%;
-    
 }
 #section1 {
     background-color: rgb(233, 184, 129);
@@ -48,14 +47,24 @@ P span{
     border-radius: 10px;
     
 }
+
+    
 .section {
-    background-color: #fff;
+    background-color: rgb(233, 184, 129);
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 10px;
 }
+
+.img-circl {
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    
+}
 #header {
-    background-image: url("https://i.pinimg.com/564x/06/59/fa/0659fabeae1193d268c0cdd383c9850d.jpg");
+    background-image: url("https://i.pinimg.com/564x/65/65/e0/6565e02383dcd3a15a3a963e49f001b7.jpg");
     background-size: contain;
     
 }
@@ -97,13 +106,13 @@ table {
     width: 100%;
 }
 table, th, td {
-    border: 2px solid #cecece;
+    border: 2px solid #864108;
     border-collapse: collapse;
     text-align: center;
     table-layout: fixed;
 }
 .selected {
-    background-color: #170750;
+    background-color: #5f310c;
     font-weight: bold;
     color: white;
 }
@@ -114,17 +123,17 @@ li {
 progress {
     width: 70%;
     height: 20px;
-    color: #3fb6b2;
+    color: #2f0ea5;
     background: #efefef;
 }
 progress::-webkit-progress-bar {
     background: #efefef;
 }
 progress::-webkit-progress-value {
-    background: #3fb6b2;
+    background: #b65b3f;
 } 
 progress::-moz-progress-bar {
-    color: #3fb6b2;
+    color: #9c691c;
     background: #efefef;
 }
 iframe, audio {
