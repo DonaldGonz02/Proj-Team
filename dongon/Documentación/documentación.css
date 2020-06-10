@@ -227,7 +227,7 @@ td{
     margin-bottom: 10px;
     overflow: hidden;
     position: relative;
-    cursor: pointer;
+    /*cursor: pointer;*/
     box-shadow:0 0 6px rgba(0, 0, 0, .5);
 }
 
@@ -325,9 +325,4 @@ footer{
 .copyright p{
     color: #ffffff;
     text-align: center;
-}
-.copyright a{
-   text-decoration: none;
-    color:#C0C0FF;
-    font-weight: bold;
 }
